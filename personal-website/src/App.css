@@ -192,13 +192,25 @@ nav a.active {
   border: 2px solid #1e90ff; /* Blue border around window */
 }
 
+
+
+/* Rocket Wings Container */
+.rocket-wings-container {
+  position: absolute;
+  top: 15px; /* Adjust this to align with the body */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep the wings in front of the flame */
+}
+
 /* Rocket Wings */
 .rocket-wing-left {
   position: absolute;
-  top: 50px;
-  left: -28px; /* Adjusted to face outward */
-  width: 25px;
-  height: 15px;
+  top: 0px; /* Adjust the top to place the left wing properly on the rocket */
+  left: -25px; /* Move the left wing slightly to the left */
+  width: 30px; /* Adjust width for the wings */
+  height: 20px; /* Adjust height for the wings */
   background-color: #1e90ff; /* Blue wings */
   border-radius: 5px;
   transform: rotate(30deg); /* Angle wings outward */
@@ -206,14 +218,15 @@ nav a.active {
 
 .rocket-wing-right {
   position: absolute;
-  top: 50px;
-  right: -28px; /* Adjusted to face outward */
-  width: 25px;
-  height: 15px;
+  bottom: 30px; /* Adjust top position to place the right wing correctly on the rocket */
+  right: 235px; /* Ensure it's aligned properly on the right side of the rocket */
+  width: 30px; /* Adjust width for the wings */
+  height: 20px; /* Adjust height for the wings */
   background-color: #1e90ff; /* Blue wings */
   border-radius: 5px;
   transform: rotate(-30deg); /* Angle wings outward */
 }
+
 
 
 /* Flame Effect */

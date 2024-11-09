@@ -78,14 +78,17 @@ function ContactMe() {
       </button>
 
       {/* Display the animated rocket when message is sent */}
-      {status === 'sent' && (
+{status === 'sent' && (
   <div className="rocket-container">
     <div className="rocket">
-      <div className="rocket-wing-left"></div>
-      <div className="rocket-wing-right"></div>
       <div className="rocket-window"></div>
     </div>
-    {/* Flame container added here */}
+    {/* Wings Container */}
+    <div className="rocket-wings-container">
+      <div className="rocket-wing-left"></div>
+      <div className="rocket-wing-right"></div>
+    </div>
+    {/* Flame container */}
     <div className="flame-container">
       <div className="flame"></div>
     </div>
