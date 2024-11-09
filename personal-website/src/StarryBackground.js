@@ -1,49 +1,83 @@
-import React, { useEffect } from 'react';
+// StarryBackground.js
+
+import React, { useEffect, useRef } from 'react';
 import './App.css';
 
-const StarryBackground = () => {
+function StarryBackground() {
+  const canvasRef = useRef(null);
+
   useEffect(() => {
-    const starContainer = document.querySelector('.starry-background');
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    const stars = [];
+    const numStars = 100;
+    const maxDistance = 100; // Distance within which stars will move away from the mouse
 
-    if (!starContainer) {
-      console.error('Star container not found');
-      return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function createStars() {
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.5,
+        });
+      }
     }
 
-    const starCount = 100;
-    starContainer.innerHTML = '';
-
-    // Create stars and position them randomly
-    for (let i = 0; i < starCount; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.width = `${Math.random() * 3}px`;
-      star.style.height = star.style.width;
-      star.style.top = `${Math.random() * 100}vh`;
-      star.style.left = `${Math.random() * 100}vw`;
-      starContainer.appendChild(star);
-    }
-
-    // Mousemove event to apply parallax effect to stars
-    const handleMouseMove = (e) => {
-      const stars = document.querySelectorAll('.star');
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       stars.forEach((star) => {
-        const speed = Math.random() * 5 + 1;
-        const x = (window.innerWidth - e.clientX * speed) / 100;
-        const y = (window.innerHeight - e.clientY * speed) / 100;
-        star.style.transform = `translate(${x}px, ${y}px)`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
       });
-    };
+    }
+
+    let mouseX = -1000; // Initially off-screen
+    let mouseY = -1000;
+
+    function handleMouseMove(event) {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    }
+
+    function updateStars() {
+      stars.forEach((star) => {
+        const dx = star.x - mouseX;
+        const dy = star.y - mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < maxDistance) {
+          const angle = Math.atan2(dy, dx);
+          const moveDistance = (maxDistance - distance) / maxDistance;
+          star.x += Math.cos(angle) * moveDistance * 5; // Adjust movement speed as needed
+          star.y += Math.sin(angle) * moveDistance * 5;
+        }
+      });
+    }
+
+    function animate() {
+      updateStars();
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+
+    createStars();
+    animate();
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Cleanup event listener on component unmount
+    // Clean up on component unmount
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  return <div className="starry-background"></div>;
-};
+  return <canvas ref={canvasRef} className="starry-background"></canvas>;
+}
 
 export default StarryBackground;

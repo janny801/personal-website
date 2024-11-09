@@ -4,6 +4,8 @@ body {
   overflow: hidden;
 }
 
+/* App.css */
+
 .starry-background {
   position: absolute;
   top: 0;
@@ -13,6 +15,7 @@ body {
   pointer-events: none;
   z-index: -1;
 }
+
 
 .star {
   position: absolute;
