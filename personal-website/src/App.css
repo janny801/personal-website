@@ -2,10 +2,10 @@ body {
   margin: 0;
   background-color: #040416;
   overflow: hidden;
+  font-family: 'Press Start 2P', monospace; /* Default hacker-style font for the whole body */
 }
 
-/* App.css */
-
+/* Starry Background */
 .starry-background {
   position: absolute;
   top: 0;
@@ -15,7 +15,6 @@ body {
   pointer-events: none;
   z-index: -1;
 }
-
 
 .star {
   position: absolute;
@@ -34,28 +33,36 @@ body {
   }
 }
 
+/* Main App Styling */
 .App {
   text-align: center;
   color: white;
 }
 
+/* Name Styling */
 h1 {
   font-size: calc(20px + 2vmin);
   margin-bottom: 20px;
+  color: transparent;
+  -webkit-text-stroke: 1px white; /* Creates the white outline */
+  text-stroke: 1px white; /* Fallback for non-Webkit browsers */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
 }
 
+/* Button Styling */
 button {
   background: none;
   border: none;
-  color: #61dafb;
-  font-size: 18px;
+  color: #b0b0b0; /* Grey color */
+  font-size: 14px;
   margin: 10px;
   padding: 10px 20px;
   cursor: pointer;
+  font-family: 'Press Start 2P', monospace; /* Retro hacker-style font */
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease;
 }
 
 button:hover {
-  border-color: #61dafb;
+  border-color: #b0b0b0; /* Light grey on hover */
 }

@@ -11,7 +11,8 @@ function StarryBackground() {
     const ctx = canvas.getContext('2d');
     const stars = [];
     const numStars = 300;
-    const maxDistance = 100; // Distance within which stars will move away from the mouse
+    const maxDistance = 120; // Distance within which stars will move away from the mouse
+    const driftSpeed = 0.2; // Speed of horizontal drift
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -58,9 +59,9 @@ function StarryBackground() {
         }
 
         // Horizontal drifting effect
-        star.x += 0.1; // Adjust this value for speed of horizontal drift
+        star.x += driftSpeed;
 
-        // Mouse avoidance effect
+        // Mouse avoidance effect with increased responsiveness
         const dx = star.x - mouseX;
         const dy = star.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -68,12 +69,13 @@ function StarryBackground() {
         if (distance < maxDistance) {
           const angle = Math.atan2(dy, dx);
           const moveDistance = (maxDistance - distance) / maxDistance;
-          star.x += Math.cos(angle) * moveDistance * 3; // Adjust movement speed as needed
-          star.y += Math.sin(angle) * moveDistance * 3;
+          star.x += Math.cos(angle) * moveDistance * 10; // Increased movement speed
+          star.y += Math.sin(angle) * moveDistance * 10;
         }
 
         // Wrap stars around edges
         if (star.x > canvas.width) star.x = 0;
+        if (star.x < 0) star.x = canvas.width;
         if (star.y < 0) star.y = canvas.height;
         if (star.y > canvas.height) star.y = 0;
       });
