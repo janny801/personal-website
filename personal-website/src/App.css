@@ -147,9 +147,13 @@ nav a.active {
   font-size: 12px;
   padding: 4px 8px;
   margin-left: 80px; /* Increased margin to move the banner to the right */
+  max-width: 200px; /* Set a fixed width for the banner */
+
   position: fixed; 
   z-index: 11; 
   border-radius: 5px;
+  white-space: nowrap; /* Prevent the text from wrapping */
+
 }
 
 
