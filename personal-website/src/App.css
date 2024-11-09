@@ -45,7 +45,7 @@ h1 {
   margin-bottom: 20px;
   color: transparent;
   -webkit-text-stroke: 1px white; /* Creates the white outline */
-  text-stroke: 1px white; /* Fallback for non-Webkit browsers */
+
   font-family: 'Orbitron', sans-serif; /* Futuristic font */
 }
 
