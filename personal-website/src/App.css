@@ -106,11 +106,19 @@ nav a.active {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
-/* Contact Me Styling */ 
+/* Contact container styling */
 .contact-container {
   text-align: center;
   color: white;
+  max-width: 600px; /* Limit the width of the entire container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+}
+
+.contact-container p {
+  max-width: 500px; /* Limit the width of the introductory text */
+  margin: 0 auto;
+  font-size: 16px;
 }
 
 .contact-links p {
@@ -131,29 +139,36 @@ nav a.active {
   margin-top: 20px;
 }
 
-.contact-form input[type="text"],
+/* Textbox and Textarea Styling */
+.contact-form input,
 .contact-form textarea {
-  width: 80%;
+  width: 80%; /* Adjust width to make it smaller */
+  max-width: 500px; /* Set a maximum width */
   padding: 10px;
   font-size: 16px;
+  font-family: 'Press Start 2P', monospace; /* Use the same font */
+  color: white; /* Text color inside text boxes */
+  background-color: #040416; /* Dark background for text boxes */
+  border: 2px solid #61dafb; /* Matching border color */
   border-radius: 5px;
-  border: 1px solid #61dafb;
-  margin-bottom: 10px;
-  background-color: #111;
-  color: white;
-  font-family: inherit;
-}
-
-.contact-form textarea {
   resize: none;
+  margin-bottom: 10px;
+  outline: none;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b0b0b0; /* Placeholder text color */
+}
+
+/* Button Styling */
 .contact-form button {
   background-color: #61dafb;
   color: black;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
+  font-family: 'Press Start 2P', monospace; /* Matching font */
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
@@ -163,9 +178,8 @@ nav a.active {
   background-color: #4a91c9;
 }
 
-
-/*status message*/
-.status-message {
+.message-success {
   color: #61dafb;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 14px;
 }
