@@ -38,12 +38,13 @@ function ContactMe() {
       <p>Feel free to reach out through any of the links below or send me a message directly.</p>
 
       <div className="contact-links">
-        <p><strong>Location: </strong>  Houston, TX</p>
-        <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+12016376539">+1 (201) 637-6539</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer">linkedin.com/in/janredsal</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/janny801" target="_blank" rel="noopener noreferrer">github.com/janny801</a></p>
-      </div>
+  <p><strong>Location: </strong>&nbsp; Houston, TX</p>
+  <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+12016376539">+1 (201) 637-6539</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer">linkedin.com/in/janredsal</a></p>
+  <p><strong>GitHub:</strong> <a href="https://github.com/janny801" target="_blank" rel="noopener noreferrer">github.com/janny801</a></p>
+</div>
+
 
       <form onSubmit={handleSubmit} className="contact-form">
         <input
