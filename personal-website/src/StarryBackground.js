@@ -92,9 +92,20 @@ function StarryBackground() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Handle window resizing to adjust canvas size and re-create stars
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars.length = 0; // Clear existing stars
+      createStars(); // Recreate stars with new dimensions
+    };
+
+    window.addEventListener('resize', handleResize);
+
     // Clean up on component unmount
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
