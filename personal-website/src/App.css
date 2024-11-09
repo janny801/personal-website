@@ -146,14 +146,11 @@ nav a.active {
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
   padding: 4px 8px;
-  margin-left: 20px; /* Increased margin to move the banner to the right */
+  margin-left: 80px; /* Increased margin to move the banner to the right */
+  position: fixed; 
+  z-index: 11; 
   border-radius: 5px;
 }
-
-
-
-
-
 
 
 /* Rocket Container */
@@ -179,8 +176,6 @@ nav a.active {
   overflow: hidden;
   transform: rotate(90deg); /* Rotate to make the rocket face right */
 }
-
-/* Rocket Window */
 .rocket-window {
   position: absolute;
   top: 20px;
@@ -190,44 +185,45 @@ nav a.active {
   background-color: #a4d3ee; /* Light blue window */
   border-radius: 50%;
   border: 2px solid #1e90ff; /* Blue border around window */
+  z-index: 1; /* Make sure window is above the rocket body */
 }
-
-
 
 /* Rocket Wings Container */
 .rocket-wings-container {
   position: absolute;
-  top: 15px; /* Adjust this to align with the body */
+  top: 15px;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keep the wings in front of the flame */
+  z-index: -1; /* Wings should be on top of the rocket */
 }
 
 /* Rocket Wings */
 .rocket-wing-left {
   position: absolute;
-  top: 0px; /* Adjust the top to place the left wing properly on the rocket */
-  left: -25px; /* Move the left wing slightly to the left */
-  width: 30px; /* Adjust width for the wings */
-  height: 20px; /* Adjust height for the wings */
+  top: 0px;
+  left: -25px;
+  width: 30px;
+  height: 20px;
   background-color: #1e90ff; /* Blue wings */
   border-radius: 5px;
   transform: rotate(30deg); /* Angle wings outward */
+  z-index: -1; /* Ensure wings are behind the rocket */
+
 }
 
 .rocket-wing-right {
   position: absolute;
-  bottom: 30px; /* Adjust top position to place the right wing correctly on the rocket */
-  right: 235px; /* Ensure it's aligned properly on the right side of the rocket */
-  width: 30px; /* Adjust width for the wings */
-  height: 20px; /* Adjust height for the wings */
+  bottom: 30px; /* Adjust the bottom position for the right wing */
+  right: 45px; /* Correct position to the right */
+  width: 30px;
+  height: 20px;
   background-color: #1e90ff; /* Blue wings */
   border-radius: 5px;
   transform: rotate(-30deg); /* Angle wings outward */
+  z-index: -1; /* Ensure wings are behind the rocket */
+
 }
-
-
 
 /* Flame Effect */
 .flame-container {
@@ -248,29 +244,19 @@ nav a.active {
   background: radial-gradient(circle at 50% 20%, orange, red, transparent);
   border-radius: 50% 50% 0 0; /* Round the top to give it the "flame" shape */
   transform: rotate(270deg); /* Rotate the flame to face left horizontally */
-
 }
 
-
-
-/* Animation Keyframes */
+/* Animation for Rocket Flying Off */
 @keyframes rocketFly {
   0% {
-    left: -100px;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
+    left: -100px; /* Start off-screen */
   }
   100% {
-    left: 100vw;
-    opacity: 0;
+    left: 120vw; /* Move the rocket completely off the screen */
   }
 }
 
+/* Flame Flicker */
 @keyframes flameFlicker {
   0% {
     transform: scaleY(1);
