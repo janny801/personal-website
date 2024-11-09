@@ -173,7 +173,7 @@ nav a.active {
   width: 50px;
   height: 80px;
   background-color: #ffffff; /* White body */
-  border-radius: 50% 50% 0 0;
+  border-radius: 25px 25px 0 0; /* Rounded edges on the left side (top-left and bottom-left) */
   position: relative;
   border-top: 20px solid #1e90ff; /* Blue nose */
   overflow: hidden;
