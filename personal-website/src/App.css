@@ -1,8 +1,9 @@
+/* General body styling */
 body {
   margin: 0;
   background-color: #040416;
-  overflow: hidden;
-  font-family: 'Press Start 2P', monospace; /* Default hacker-style font for the whole body */
+  font-family: 'Press Start 2P', monospace;
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
 /* Starry Background */
@@ -16,27 +17,11 @@ body {
   z-index: -1;
 }
 
-.star {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 2s infinite ease-in-out alternate;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-
 /* Main App Styling */
 .App {
   text-align: center;
   color: white;
+  padding: 20px;
 }
 
 /* Name Styling */
@@ -44,24 +29,10 @@ h1 {
   font-size: calc(20px + 2vmin);
   margin-bottom: 20px;
   color: transparent;
-  -webkit-text-stroke: 1px white; /* Creates the white outline */
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  -webkit-text-stroke: 1px white;
+  font-family: 'Orbitron', sans-serif;
   display: inline-block;
-  white-space: nowrap; /* Prevents line breaks */
-}
-
-/* Cursor styling */
-.cursor {
-  font-weight: bold;
-  color: white;
-}
-
-.cursor.visible {
-  opacity: 1;
-}
-
-.cursor:not(.visible) {
-  opacity: 0;
+  white-space: nowrap;
 }
 
 /* Navigation Styling */
@@ -70,74 +41,53 @@ nav {
 }
 
 nav a {
-  margin: 0 15px; /* Adds space between the buttons */
-  color: #b0b0b0; /* Button color */
+  margin: 0 15px;
+  color: #b0b0b0;
   text-decoration: none;
-  font-family: 'Press Start 2P', monospace; /* Retro hacker-style font */
+  font-family: 'Press Start 2P', monospace;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  color: #61dafb; /* Light blue on hover */
-  border-bottom: 2px solid #61dafb; /* Underline on hover */
+  color: #61dafb;
+  border-bottom: 2px solid #61dafb;
 }
 
 nav a.active {
-  color: #61dafb; /* Active link color */
+  color: #61dafb;
 }
-
-/* Content Section Styling */
-.content {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-/* Typewriter Cursor */
-.cursor {
-  display: inline-block;
-  width: 2px;
-  background-color: white;
-  animation: blink 1s step-end infinite;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 
 /* Contact container styling */
 .contact-container {
   text-align: center;
   color: white;
-  max-width: 600px; /* Limit the width of the entire container */
-  margin: 0 auto; /* Center the container */
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 .contact-container p {
-  max-width: 500px; /* Limit the width of the introductory text */
+  max-width: 500px;
   margin: 0 auto;
   font-size: 16px;
-  margin-bottom: 20px; /* Space after introductory text */
+  margin-bottom: 20px;
 }
 
 .contact-links {
-  margin-bottom: 30px; /* Add more space between contact links and message form */
+  margin-bottom: 30px;
 }
 
 .contact-links p {
   font-size: 18px;
-  margin: 10px 0; /* Add space between each contact link */
-  display: flex; /* Align text and link on the same line */
+  margin: 10px 0;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contact-links p a {
-  margin-left: 5px; /* Add space between label and link */
+  margin-left: 5px;
   color: #61dafb;
   text-decoration: none;
 }
@@ -147,29 +97,29 @@ nav a.active {
 }
 
 .contact-form {
-  margin-top: 30px; /* More space above the form */
+  margin-top: 30px;
 }
 
 /* Textbox and Textarea Styling */
 .contact-form input,
 .contact-form textarea {
-  width: 80%; /* Adjust width to make it smaller */
-  max-width: 500px; /* Set a maximum width */
+  width: 80%;
+  max-width: 500px;
   padding: 10px;
   font-size: 16px;
-  font-family: 'Press Start 2P', monospace; /* Use the same font */
-  color: #61dafb; /* Text color inside text boxes */
-  background-color: #040416; /* Dark background for text boxes */
-  border: 2px solid #61dafb; /* Matching border color */
+  font-family: 'Press Start 2P', monospace;
+  color: whitesmoke;
+  background-color: #040416;
+  border: 2px solid #61dafb;
   border-radius: 5px;
   resize: none;
-  margin-bottom: 15px; /* Space between each input field */
+  margin-bottom: 15px;
   outline: none;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #b0b0b0; /* Placeholder text color */
+  color: #b0b0b0;
 }
 
 /* Button Styling */
@@ -179,7 +129,7 @@ nav a.active {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-  font-family: 'Press Start 2P', monospace; /* Matching font */
+  font-family: 'Press Start 2P', monospace;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
