@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import './App.css';
+import './App.css'; // Ensure the path is correct
 
 function ContactMe() {
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [showPlane, setShowPlane] = useState(false);
+  const [status, setStatus] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,24 +15,22 @@ function ContactMe() {
       from_name: name,
       subject: subject,
       message: message,
-      reply_to: 'jred8069@gmail.com'
+      reply_to: 'jred8069@gmail.com',
     };
 
-    emailjs.send('service_wgzofw4', 'template_2u6k3s5', templateParams, '0slSczrnYUnKkH5J-')
+    emailjs
+      .send('service_wgzofw4', 'template_2u6k3s5', templateParams, '0slSczrnYUnKkH5J-')
       .then((response) => {
         console.log('Email successfully sent!', response);
-        setShowPlane(true);
-
-        // Clear the form fields
+        setStatus('sent');
         setName('');
         setSubject('');
         setMessage('');
-
-        // Hide the plane after it flies across
-        setTimeout(() => setShowPlane(false), 5000);
+        setTimeout(() => setStatus(''), 6000); // Clear status after 6 seconds
       })
       .catch((error) => {
         console.error('Error sending email:', error);
+        setStatus('error');
       });
   };
 
@@ -73,15 +71,28 @@ function ContactMe() {
         />
         <button type="submit">Send Message</button>
       </form>
-      
-      {/* Animated plane with banner */}
-      {showPlane && (
-        <div className="plane-animation">
-          <div className="plane">
-            ✈️ <span className="plane-banner">Message sent successfully!</span>
-          </div>
-        </div>
-      )}
+
+      {/* Test button for animation */}
+      <button type="button" onClick={() => setStatus('sent')} style={{ marginTop: '20px' }}>
+        Test Animation
+      </button>
+
+      {/* Display the animated rocket when message is sent */}
+      {status === 'sent' && (
+  <div className="rocket-container">
+    <div className="rocket">
+      <div className="rocket-wing-left"></div>
+      <div className="rocket-wing-right"></div>
+      <div className="rocket-window"></div>
+    </div>
+    {/* Flame container added here */}
+    <div className="flame-container">
+      <div className="flame"></div>
+    </div>
+    <div className="banner">Message sent!</div>
+  </div>
+)}
+
     </div>
   );
 }

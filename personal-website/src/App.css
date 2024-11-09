@@ -139,48 +139,130 @@ nav a.active {
   background-color: #4a91c9;
 }
 
-/* Success message styling */
-.message-success {
-  color: #61dafb;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-
-/* Plane animation container at the bottom */
-.plane-animation {
-  position: fixed;
-  bottom: 20px; /* Position at the bottom */
-  left: -300px; /* Start offscreen */
-  display: flex;
-  align-items: center;
-  animation: flyAcrossBottom 5s linear forwards;
-  z-index: 10;
-}
-
-/* Plane styling with banner */
-.plane {
-  display: flex;
-  align-items: center;
-  font-size: 2em;
-}
-
-.plane-banner {
+/* Banner Styling */
+.banner {
   background-color: #61dafb;
   color: black;
-  padding: 5px 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  padding: 4px 8px;
   margin-left: 10px;
-  font-size: 0.8em;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-/* Animation keyframes for the plane to fly across the bottom of the screen */
-@keyframes flyAcrossBottom {
+
+
+
+
+
+
+/* Rocket Container */
+.rocket-container {
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  display: flex;
+  align-items: center;
+  animation: rocketFly 5s linear forwards;
+  z-index: 10;
+  overflow: visible; /* Allow the flame to protrude outside the rocket container */
+}
+
+/* Rocket Styling */
+.rocket {
+  width: 50px;
+  height: 80px;
+  background-color: #ffffff; /* White body */
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  border-top: 20px solid #1e90ff; /* Blue nose */
+  overflow: hidden;
+  transform: rotate(90deg); /* Rotate to make the rocket face right */
+}
+
+/* Rocket Window */
+.rocket-window {
+  position: absolute;
+  top: 20px;
+  left: 17px;
+  width: 15px;
+  height: 15px;
+  background-color: #a4d3ee; /* Light blue window */
+  border-radius: 50%;
+  border: 2px solid #1e90ff; /* Blue border around window */
+}
+
+/* Rocket Wings */
+.rocket-wing-left {
+  position: absolute;
+  top: 50px;
+  left: -28px; /* Adjusted to face outward */
+  width: 25px;
+  height: 15px;
+  background-color: #1e90ff; /* Blue wings */
+  border-radius: 5px;
+  transform: rotate(30deg); /* Angle wings outward */
+}
+
+.rocket-wing-right {
+  position: absolute;
+  top: 50px;
+  right: -28px; /* Adjusted to face outward */
+  width: 25px;
+  height: 15px;
+  background-color: #1e90ff; /* Blue wings */
+  border-radius: 5px;
+  transform: rotate(-30deg); /* Angle wings outward */
+}
+
+
+/* Flame Effect */
+.flame-container {
+  position: absolute;
+  left: -70px; /* Move flame further to the left of the rocket */
+  bottom: -30px; /* Position it below the rocket */
+  width: 30px;  /* Adjust width to make it thinner */
+  height: 160px;  /* Adjust height for the flame */
+  animation: flameFlicker 0.2s infinite alternate;
+  transform: rotate(0deg); /* Rotate the flame to face left horizontally */
+  z-index: -1; /* Place flame behind the rocket */
+}
+
+/* Flame Styling */
+.flame {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, orange, red, transparent);
+  border-radius: 50% 50% 0 0; /* Round the top to give it the "flame" shape */
+  transform: rotate(270deg); /* Rotate the flame to face left horizontally */
+
+}
+
+
+
+/* Animation Keyframes */
+@keyframes rocketFly {
   0% {
-    left: -300px; /* Start position (offscreen left) */
+    left: -100px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
   }
   100% {
-    left: 100vw; /* End position (offscreen right) */
+    left: 100vw;
+    opacity: 0;
+  }
+}
+
+@keyframes flameFlicker {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.8);
   }
 }
