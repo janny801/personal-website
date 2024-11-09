@@ -147,37 +147,38 @@ nav a.active {
 }
 
 
-/* Plane animation container */
+/* Plane animation container at the bottom */
 .plane-animation {
   position: fixed;
-  top: 50px; /* Adjust as needed */
-  left: -200px; /* Start offscreen */
+  bottom: 20px; /* Position at the bottom */
+  left: -300px; /* Start offscreen */
   display: flex;
   align-items: center;
-  animation: flyAcross 5s linear forwards;
+  animation: flyAcrossBottom 5s linear forwards;
   z-index: 10;
 }
 
-/* Plane icon */
+/* Plane styling with banner */
 .plane {
+  display: flex;
+  align-items: center;
   font-size: 2em;
-  margin-right: 10px;
 }
 
-/* Banner */
-.banner {
+.plane-banner {
   background-color: #61dafb;
   color: black;
-  padding: 10px 20px;
-  font-size: 1em;
-  font-family: 'Press Start 2P', monospace;
+  padding: 5px 10px;
+  margin-left: 10px;
+  font-size: 0.8em;
   border-radius: 5px;
+  font-weight: bold;
 }
 
-/* Animation keyframes for the plane to fly across the screen */
-@keyframes flyAcross {
+/* Animation keyframes for the plane to fly across the bottom of the screen */
+@keyframes flyAcrossBottom {
   0% {
-    left: -200px; /* Start position (offscreen left) */
+    left: -300px; /* Start position (offscreen left) */
   }
   100% {
     left: 100vw; /* End position (offscreen right) */

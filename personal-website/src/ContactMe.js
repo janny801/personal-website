@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import './App.css'; // Ensure styles are in App.css for animation
+import './App.css';
 
 function ContactMe() {
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
   const [showPlane, setShowPlane] = useState(false);
 
   const handleSubmit = (e) => {
@@ -22,20 +21,18 @@ function ContactMe() {
     emailjs.send('service_wgzofw4', 'template_2u6k3s5', templateParams, '0slSczrnYUnKkH5J-')
       .then((response) => {
         console.log('Email successfully sent!', response);
-        setStatus('Message sent successfully!');
-        setShowPlane(true); // Show the plane animation
+        setShowPlane(true);
 
         // Clear the form fields
         setName('');
         setSubject('');
         setMessage('');
 
-        // Hide the plane animation after it flies across
-        setTimeout(() => setShowPlane(false), 5000); // Adjust duration as needed
+        // Hide the plane after it flies across
+        setTimeout(() => setShowPlane(false), 5000);
       })
       .catch((error) => {
         console.error('Error sending email:', error);
-        setStatus('Failed to send the message. Please try again.');
       });
   };
 
@@ -77,13 +74,12 @@ function ContactMe() {
         <button type="submit">Send Message</button>
       </form>
       
-      {status && <p className="status-message">{status}</p>}
-
       {/* Animated plane with banner */}
       {showPlane && (
         <div className="plane-animation">
-          <div className="plane">✈️</div>
-          <div className="banner">Message sent successfully!</div>
+          <div className="plane">
+            ✈️ <span className="plane-banner">Message sent successfully!</span>
+          </div>
         </div>
       )}
     </div>
