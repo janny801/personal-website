@@ -145,3 +145,41 @@ nav a.active {
   margin-top: 15px;
   font-size: 14px;
 }
+
+
+/* Plane animation container */
+.plane-animation {
+  position: fixed;
+  top: 50px; /* Adjust as needed */
+  left: -200px; /* Start offscreen */
+  display: flex;
+  align-items: center;
+  animation: flyAcross 5s linear forwards;
+  z-index: 10;
+}
+
+/* Plane icon */
+.plane {
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+/* Banner */
+.banner {
+  background-color: #61dafb;
+  color: black;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: 'Press Start 2P', monospace;
+  border-radius: 5px;
+}
+
+/* Animation keyframes for the plane to fly across the screen */
+@keyframes flyAcross {
+  0% {
+    left: -200px; /* Start position (offscreen left) */
+  }
+  100% {
+    left: 100vw; /* End position (offscreen right) */
+  }
+}
