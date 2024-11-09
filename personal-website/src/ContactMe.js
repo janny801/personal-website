@@ -6,7 +6,7 @@ function ContactMe() {
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+  const [rockets, setRockets] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,15 +22,26 @@ function ContactMe() {
       .send('service_wgzofw4', 'template_2u6k3s5', templateParams, '0slSczrnYUnKkH5J-')
       .then((response) => {
         console.log('Email successfully sent!', response);
-        setStatus('sent');
+
+        // Add a new rocket to the rockets array
+        setRockets((prevRockets) => [
+          ...prevRockets,
+          { id: Date.now() }, // Using current timestamp as unique id
+        ]);
+
         setName('');
         setSubject('');
         setMessage('');
-        setTimeout(() => setStatus(''), 6000); // Clear status after 6 seconds
+
+        // Set a timeout to remove the rocket after 6 seconds
+        setTimeout(() => {
+          setRockets((prevRockets) =>
+            prevRockets.filter((rocket) => rocket.id !== Date.now()) // Remove the latest rocket
+          );
+        }, 6000); // Timeout after 6 seconds
       })
       .catch((error) => {
         console.error('Error sending email:', error);
-        setStatus('error');
       });
   };
 
@@ -40,7 +51,7 @@ function ContactMe() {
       <p>Feel free to reach out through any of the links below or send me a message directly.</p>
 
       {/* Centered Contact Links */}
-      <div className="contact-links">
+      <div className="contact-links" style={{ textAlign: 'center' }}>
         <p><strong>Location: </strong>&nbsp; Houston, TX</p>
         <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+12016376539">+1 (201) 637-6539</a></p>
@@ -74,9 +85,9 @@ function ContactMe() {
         <button type="submit">Send Message</button>
       </form>
 
-      {/* Display the animated rocket when message is sent */}
-      {status === 'sent' && (
-        <div className="rocket-container">
+      {/* Display multiple rockets */}
+      {rockets.map((rocket) => (
+        <div key={rocket.id} className="rocket-container">
           <div className="rocket">
             <div className="rocket-window"></div>
           </div>
@@ -91,7 +102,7 @@ function ContactMe() {
           </div>
           <div className="banner">Message sent!</div>
         </div>
-      )}
+      ))}
     </div>
   );
 }
