@@ -39,6 +39,7 @@ function ContactMe() {
       <h2>Contact Me</h2>
       <p>Feel free to reach out through any of the links below or send me a message directly.</p>
 
+      {/* Centered Contact Links */}
       <div className="contact-links">
         <p><strong>Location: </strong>&nbsp; Houston, TX</p>
         <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
@@ -47,6 +48,7 @@ function ContactMe() {
         <p><strong>GitHub:</strong> <a href="https://github.com/janny801" target="_blank" rel="noopener noreferrer">github.com/janny801</a></p>
       </div>
 
+      {/* Form */}
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
@@ -72,30 +74,24 @@ function ContactMe() {
         <button type="submit">Send Message</button>
       </form>
 
-      {/* Test button for animation */}
-      <button type="button" onClick={() => setStatus('sent')} style={{ marginTop: '20px' }}>
-        Test Animation
-      </button>
-
       {/* Display the animated rocket when message is sent */}
-{status === 'sent' && (
-  <div className="rocket-container">
-    <div className="rocket">
-      <div className="rocket-window"></div>
-    </div>
-    {/* Wings Container */}
-    <div className="rocket-wings-container">
-      <div className="rocket-wing-left"></div>
-      <div className="rocket-wing-right"></div>
-    </div>
-    {/* Flame container */}
-    <div className="flame-container">
-      <div className="flame"></div>
-    </div>
-    <div className="banner">Message sent!</div>
-  </div>
-)}
-
+      {status === 'sent' && (
+        <div className="rocket-container">
+          <div className="rocket">
+            <div className="rocket-window"></div>
+          </div>
+          {/* Wings Container */}
+          <div className="rocket-wings-container">
+            <div className="rocket-wing-left"></div>
+            <div className="rocket-wing-right"></div>
+          </div>
+          {/* Flame container */}
+          <div className="flame-container">
+            <div className="flame"></div>
+          </div>
+          <div className="banner">Message sent!</div>
+        </div>
+      )}
     </div>
   );
 }
