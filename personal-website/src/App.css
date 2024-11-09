@@ -106,6 +106,8 @@ nav a.active {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+
 /* Contact container styling */
 .contact-container {
   text-align: center;
@@ -119,14 +121,23 @@ nav a.active {
   max-width: 500px; /* Limit the width of the introductory text */
   margin: 0 auto;
   font-size: 16px;
+  margin-bottom: 20px; /* Space after introductory text */
+}
+
+.contact-links {
+  margin-bottom: 30px; /* Add more space between contact links and message form */
 }
 
 .contact-links p {
   font-size: 18px;
-  margin: 5px 0;
+  margin: 10px 0; /* Add space between each contact link */
+  display: flex; /* Align text and link on the same line */
+  justify-content: center;
+  align-items: center;
 }
 
-.contact-links a {
+.contact-links p a {
+  margin-left: 5px; /* Add space between label and link */
   color: #61dafb;
   text-decoration: none;
 }
@@ -136,7 +147,7 @@ nav a.active {
 }
 
 .contact-form {
-  margin-top: 20px;
+  margin-top: 30px; /* More space above the form */
 }
 
 /* Textbox and Textarea Styling */
@@ -147,12 +158,12 @@ nav a.active {
   padding: 10px;
   font-size: 16px;
   font-family: 'Press Start 2P', monospace; /* Use the same font */
-  color: white; /* Text color inside text boxes */
+  color: #61dafb; /* Text color inside text boxes */
   background-color: #040416; /* Dark background for text boxes */
   border: 2px solid #61dafb; /* Matching border color */
   border-radius: 5px;
   resize: none;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Space between each input field */
   outline: none;
 }
 
@@ -178,6 +189,7 @@ nav a.active {
   background-color: #4a91c9;
 }
 
+/* Success message styling */
 .message-success {
   color: #61dafb;
   margin-top: 15px;
