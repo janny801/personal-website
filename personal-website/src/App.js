@@ -13,6 +13,7 @@ function App() {
   const observerRef = useRef();
   const fullName = "Janred Salubayba";
   const typingSpeed = 150; // Adjust speed of typing in ms
+  const maxSpacers = 50; // Set the maximum number of spacers
 
   // Typing effect
   useEffect(() => {
@@ -38,12 +39,19 @@ function App() {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Infinite scroll observer for invisible spacers
+  // Infinite scroll observer with a maximum spacer limit
   useEffect(() => {
     observerRef.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        // Add more invisible spacers when reaching the last one
-        setSpacers((prevSpacers) => [...prevSpacers, ...Array.from({ length: 10 })]);
+        // Add more invisible spacers only if the current number is less than maxSpacers
+        setSpacers((prevSpacers) => {
+          if (prevSpacers.length < maxSpacers) {
+            return [...prevSpacers, ...Array.from({ length: 10 })];
+          } else {
+            observerRef.current.disconnect(); // Stop observing once the limit is reached
+            return prevSpacers;
+          }
+        });
       }
     });
     
