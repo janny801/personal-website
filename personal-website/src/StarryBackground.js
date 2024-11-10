@@ -63,7 +63,7 @@ function StarryBackground({ scrollContainerRef }) {
 
       console.log("Current ScrollY:", currentScrollY);
 
-      // Move stars based on scroll position (inverted movement)
+      // Move stars based on scroll position (adjusted movement to stay within canvas bounds)
       stars.forEach((star) => {
         // Twinkle effect for selective stars
         if (star.twinkle) {
@@ -71,13 +71,19 @@ function StarryBackground({ scrollContainerRef }) {
           star.opacity = star.baseOpacity + Math.sin(Date.now() * star.twinkleFactor) * 0.2;
         }
 
-        // Apply vertical movement based on scroll position (inverted movement)
-        // Adjust the multiplier for smoother scrolling effect
-        star.y = star.initialY - currentScrollY * 0.1;
+        // Apply vertical movement based on scroll position
+        const scaleFactor = 1; // Use scale factor for movement
+        let verticalMovement = star.initialY - (currentScrollY * scaleFactor);
 
-        // Ensure stars stay within the vertical bounds of the canvas (wrap around if needed)
-        // Use modulo to wrap stars vertically within the canvas
-        star.y = (star.y + canvas.height) % canvas.height;
+        // Ensure the stars stay within the vertical bounds of the canvas
+        verticalMovement = verticalMovement % canvas.height; // Smooth vertical wrapping
+
+        // Correctly adjust vertical wrapping to avoid jumping to the top
+        if (verticalMovement < 0) {
+          verticalMovement += canvas.height;
+        }
+
+        star.y = verticalMovement;
 
         // Horizontal drifting effect
         star.x += driftSpeed;
