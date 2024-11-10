@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import StarryBackground from './StarryBackground';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Projects from './Projects';
@@ -9,6 +9,8 @@ import './App.css';
 function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
+  const [spacers, setSpacers] = useState(Array.from({ length: 10 })); // Initial invisible spacers
+  const observerRef = useRef();
   const fullName = "Janred Salubayba";
   const typingSpeed = 150; // Adjust speed of typing in ms
 
@@ -36,21 +38,50 @@ function App() {
     return () => clearInterval(cursorInterval);
   }, []);
 
+  // Infinite scroll observer for invisible spacers
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        // Add more invisible spacers when reaching the last one
+        setSpacers((prevSpacers) => [...prevSpacers, ...Array.from({ length: 10 })]);
+      }
+    });
+    
+    const lastSpacer = document.querySelector('.infinite-scroll-end');
+    if (lastSpacer) {
+      observerRef.current.observe(lastSpacer);
+    }
+    
+    return () => {
+      if (lastSpacer) {
+        observerRef.current.unobserve(lastSpacer);
+      }
+    };
+  }, [spacers]);
+
   return (
     <Router>
       <div className="App">
         <StarryBackground />
-        <h1>{displayedText}<span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span></h1>
-        <nav>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About Me</Link>
-          <Link to="/contact">Contact Me</Link>
-        </nav>
-        <Routes>
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/contact" element={<ContactMe />} />
-        </Routes>
+        <div className="content">
+          <h1>{displayedText}<span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span></h1>
+          <nav>
+            <Link to="/projects">Projects</Link>
+            <Link to="/about">About Me</Link>
+            <Link to="/contact">Contact Me</Link>
+          </nav>
+          <Routes>
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/contact" element={<ContactMe />} />
+          </Routes>
+          <div className="infinite-scroll-container">
+            {spacers.map((_, index) => (
+              <div key={index} className="spacer"></div>
+            ))}
+            <div className="infinite-scroll-end"></div>
+          </div>
+        </div>
       </div>
     </Router>
   );

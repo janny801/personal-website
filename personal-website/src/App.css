@@ -8,22 +8,55 @@ body {
 
 /* Starry Background */
 .starry-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: -1;
   background-attachment: fixed;
 }
 
+
 /* Main App Styling */
 .App {
-  text-align: center;
-  color: white;
-  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
+.content {
+  position: relative;
+  padding-top: 100px; /* Space for the starry background */
+  overflow-y: auto;
+  max-height: 100vh;
+}
+.infinite-scroll-container {
+  margin-top: 20px;
+  padding-bottom: 100px; /* Space at the bottom */
+}
+
+.item {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.spacer {
+  height: 100px; /* Adjust height as needed to control scroll speed */
+  visibility: hidden; /* Make them invisible */
+}
+
+.infinite-scroll-container {
+  padding-bottom: 100px; /* Additional space at the bottom */
+}
+
+
+
+
 
 /* Name Styling */
 h1 {
