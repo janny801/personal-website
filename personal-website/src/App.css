@@ -15,6 +15,7 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: -1;
+  background-attachment: fixed;
 }
 
 /* Main App Styling */
@@ -550,39 +551,8 @@ nav a.active {
 
 
 
-
-/* General container for the "About Me" section */
-.aboutme-container {
-  text-align: center;
-  color: white;
-  margin: 40px auto; /* Center the container and give it top/bottom margin */
-  padding: 20px;
-  width: 80%; /* To match the width of the "Contact Me" section */
-  max-width: 800px; /* Adjust max width for better readability */
-}
-
-/* Heading styling */
-.aboutme-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-family: 'Press Start 2P', monospace;
-  font-weight: bold;
-}
-
-/* Text container styling */
-
+/* AboutMe styling */
 .about-me-text {
-  font-size: 18px;
-  line-height: 2; /* Increased line-height for more space between lines */
-  font-family: 'Press Start 2P', monospace;
-  word-spacing: 1px; /* Adjusted to match your previous word spacing */
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-/* Ensuring the paragraphs are centered and properly spaced */
-.about-me-text p {
-  margin-bottom: 15px; /* Space between paragraphs */
-  white-space: pre-line; /* Maintains line breaks and spacing */
+  line-height: 1.6; /* Adjust this value for more or less space between lines */
+  margin-bottom: 20px; /* Optional: for additional spacing after the paragraph */
 }

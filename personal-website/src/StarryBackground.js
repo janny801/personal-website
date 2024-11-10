@@ -1,5 +1,3 @@
-// StarryBackground.js
-
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 
@@ -14,9 +12,13 @@ function StarryBackground() {
     const maxDistance = 120; // Distance within which stars will move away from the mouse
     const driftSpeed = 0.2; // Speed of horizontal drift
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Set canvas size to the window's width and height
+    const updateCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.documentElement.scrollHeight; // Set height to full document height to accommodate scrolling
+    };
 
+    // Create the stars
     function createStars() {
       for (let i = 0; i < numStars; i++) {
         stars.push({
@@ -32,8 +34,9 @@ function StarryBackground() {
       }
     }
 
+    // Draw the stars on the canvas
     function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas before each draw
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
@@ -50,6 +53,7 @@ function StarryBackground() {
       mouseY = event.clientY;
     }
 
+    // Update the stars' positions and effects
     function updateStars() {
       stars.forEach((star) => {
         // Twinkle effect for selective stars
@@ -84,7 +88,7 @@ function StarryBackground() {
     function animate() {
       updateStars();
       drawStars();
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animate); // Recursive call to animate continuously
     }
 
     createStars();
@@ -92,20 +96,25 @@ function StarryBackground() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Handle window resizing to adjust canvas size and re-create stars
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    // Handle window resizing and scrolling to adjust canvas size
+    const handleResizeOrScroll = () => {
+      updateCanvasSize();
       stars.length = 0; // Clear existing stars
       createStars(); // Recreate stars with new dimensions
     };
 
-    window.addEventListener('resize', handleResize);
+    // Adjust canvas on resize and scroll
+    window.addEventListener('resize', handleResizeOrScroll);
+    window.addEventListener('scroll', handleResizeOrScroll); // Add scroll listener
+
+    // Initial canvas setup
+    updateCanvasSize();
 
     // Clean up on component unmount
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeOrScroll);
+      window.removeEventListener('scroll', handleResizeOrScroll);
     };
   }, []);
 
