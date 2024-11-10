@@ -269,3 +269,12 @@ nav a.active {
     transform: scaleY(0.8);
   }
 }
+
+
+
+/* AboutMe styling */
+.about-me-text {
+  line-height: 1.6; /* Adjust this value for more or less space between lines */
+  margin-bottom: 20px; /* Optional: for additional spacing after the paragraph */
+}
+
