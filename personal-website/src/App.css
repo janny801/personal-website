@@ -271,10 +271,318 @@ nav a.active {
 }
 
 
-
-/* AboutMe styling */
-.about-me-text {
-  line-height: 1.6; /* Adjust this value for more or less space between lines */
-  margin-bottom: 20px; /* Optional: for additional spacing after the paragraph */
+/* General container for the "About Me" section */
+.aboutme-container {
+  text-align: center;
+  color: white;
+  margin: 40px auto; /* Center the container and give it top/bottom margin */
+  padding: 20px;
+  width: 80%; /* To match the width of the "Contact Me" section */
+  max-width: 800px; /* Adjust max width for better readability */
 }
 
+/* Heading styling */
+.aboutme-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-weight: bold;
+}
+
+/* Text container styling *//* General body styling */
+body {
+  margin: 0;
+  background-color: #040416;
+  font-family: 'Press Start 2P', monospace;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Starry Background */
+.starry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Main App Styling */
+.App {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Name Styling */
+h1 {
+  font-size: calc(20px + 2vmin);
+  margin-bottom: 20px;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-family: 'Orbitron', sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Navigation Styling */
+nav {
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-family: 'Press Start 2P', monospace;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: #61dafb;
+  border-bottom: 2px solid #61dafb;
+}
+
+nav a.active {
+  color: #61dafb;
+}
+
+/* Contact container styling */
+.contact-container {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-container p {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  margin-bottom: 30px;
+}
+
+.contact-links p {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-links p a {
+  margin-left: 5px;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+/* Textbox and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Press Start 2P', monospace;
+  color: whitesmoke;
+  background-color: #040416;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  resize: none;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b0b0b0;
+}
+
+/* Button Styling */
+.contact-form button {
+  background-color: #61dafb;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Press Start 2P', monospace;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #4a91c9;
+}
+
+/* Banner Styling */
+.banner {
+  background-color: #61dafb;
+  color: black;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-left: 80px; /* Increased margin to move the banner to the right */
+  max-width: 200px; /* Set a fixed width for the banner */
+  position: fixed;
+  z-index: 11;
+  border-radius: 5px;
+  white-space: nowrap; /* Prevent the text from wrapping */
+}
+
+
+/* Rocket Container */
+.rocket-container {
+  position: fixed;
+  bottom: 20px;
+  left: -100px;
+  display: flex;
+  align-items: center;
+  animation: rocketFly 5s linear forwards;
+  z-index: 10;
+  overflow: visible; /* Allow the flame to protrude outside the rocket container */
+}
+
+/* Rocket Styling */
+.rocket {
+  width: 50px;
+  height: 80px;
+  background-color: #ffffff; /* White body */
+  border-radius: 25px 25px 0 0; /* Rounded edges on the left side (top-left and bottom-left) */
+  position: relative;
+  border-top: 20px solid #1e90ff; /* Blue nose */
+  overflow: hidden;
+  transform: rotate(90deg); /* Rotate to make the rocket face right */
+}
+
+/* Rocket Wings Container */
+.rocket-wings-container {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Wings should be on top of the rocket */
+}
+
+/* Rocket Wings */
+.rocket-wing-left {
+  position: absolute;
+  top: 0px;
+  left: -25px;
+  width: 30px;
+  height: 20px;
+  background-color: #1e90ff; /* Blue wings */
+  border-radius: 5px;
+  transform: rotate(30deg); /* Angle wings outward */
+  z-index: -1; /* Ensure wings are behind the rocket */
+}
+
+.rocket-wing-right {
+  position: absolute;
+  bottom: 30px; /* Adjust the bottom position for the right wing */
+  right: 45px; /* Correct position to the right */
+  width: 30px;
+  height: 20px;
+  background-color: #1e90ff; /* Blue wings */
+  border-radius: 5px;
+  transform: rotate(-30deg); /* Angle wings outward */
+  z-index: -1; /* Ensure wings are behind the rocket */
+}
+
+/* Flame Effect */
+.flame-container {
+  position: absolute;
+  left: -70px; /* Move flame further to the left of the rocket */
+  bottom: -30px; /* Position it below the rocket */
+  width: 30px;  /* Adjust width to make it thinner */
+  height: 160px;  /* Adjust height for the flame */
+  animation: flameFlicker 0.2s infinite alternate;
+  transform: rotate(0deg); /* Rotate the flame to face left horizontally */
+  z-index: -1; /* Place flame behind the rocket */
+}
+
+/* Flame Styling */
+.flame {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, orange, red, transparent);
+  border-radius: 50% 50% 0 0; /* Round the top to give it the "flame" shape */
+  transform: rotate(270deg); /* Rotate the flame to face left horizontally */
+}
+
+/* Animation for Rocket Flying Off */
+@keyframes rocketFly {
+  0% {
+    left: -100px; /* Start off-screen */
+  }
+  100% {
+    left: 120vw; /* Move the rocket completely off the screen */
+  }
+}
+
+/* Flame Flicker */
+@keyframes flameFlicker {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.8);
+  }
+}
+
+
+
+
+
+
+/* General container for the "About Me" section */
+.aboutme-container {
+  text-align: center;
+  color: white;
+  margin: 40px auto; /* Center the container and give it top/bottom margin */
+  padding: 20px;
+  width: 80%; /* To match the width of the "Contact Me" section */
+  max-width: 800px; /* Adjust max width for better readability */
+}
+
+/* Heading styling */
+.aboutme-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-weight: bold;
+}
+
+/* Text container styling */
+
+.about-me-text {
+  font-size: 18px;
+  line-height: 2; /* Increased line-height for more space between lines */
+  font-family: 'Press Start 2P', monospace;
+  word-spacing: 1px; /* Adjusted to match your previous word spacing */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* Ensuring the paragraphs are centered and properly spaced */
+.about-me-text p {
+  margin-bottom: 15px; /* Space between paragraphs */
+  white-space: pre-line; /* Maintains line breaks and spacing */
+}
