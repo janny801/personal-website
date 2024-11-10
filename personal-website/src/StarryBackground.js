@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './App.css';
 
 function StarryBackground({ scrollContainerRef }) {
-  const canvasRef = useRef(null);
-  const lastScrollY = useRef(0); // Track scroll position
+  const canvasRef = useRef(null);  // Ref for the canvas
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,7 +20,8 @@ function StarryBackground({ scrollContainerRef }) {
       for (let i = 0; i < numStars; i++) {
         stars.push({
           x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          y: Math.random() * canvas.height,  // Initial position of stars
+          initialY: Math.random() * canvas.height, // Store initial Y position
           size: Math.random() * 2 + 1,
           baseSize: Math.random() * 2 + 1, // Base size for twinkle effect
           opacity: Math.random() * 0.5 + 0.5,
@@ -50,23 +50,20 @@ function StarryBackground({ scrollContainerRef }) {
     function handleMouseMove(event) {
       mouseX = event.clientX;
       mouseY = event.clientY;
-      console.log("Mouse X:", mouseX, "Mouse Y:", mouseY); // Debugging the mouse position
     }
 
-    // Handle scroll event
+    // Handle scroll event based only on current scroll position
     function handleScroll() {
       let currentScrollY = 0;
       if (scrollContainerRef.current) {
         currentScrollY = scrollContainerRef.current.scrollTop;
-        console.log("ScrollTop (custom container):", currentScrollY); // Debugging the scroll position in custom container
       } else {
         currentScrollY = window.scrollY;
-        console.log("Window ScrollY:", currentScrollY); // Debugging window scroll position
       }
 
-      const scrollDelta = currentScrollY - lastScrollY.current;
-      console.log("Scroll Delta:", scrollDelta); // Debugging scroll delta
+      console.log("Current ScrollY:", currentScrollY);
 
+      // Move stars based on scroll position (inverted movement)
       stars.forEach((star) => {
         // Twinkle effect for selective stars
         if (star.twinkle) {
@@ -74,13 +71,18 @@ function StarryBackground({ scrollContainerRef }) {
           star.opacity = star.baseOpacity + Math.sin(Date.now() * star.twinkleFactor) * 0.2;
         }
 
-        // Apply vertical scroll effect based on scrollTop
-        star.y -= scrollDelta * 0.1; // Move stars upward when scrolling down
+        // Apply vertical movement based on scroll position (inverted movement)
+        // Adjust the multiplier for smoother scrolling effect
+        star.y = star.initialY - currentScrollY * 0.1;
+
+        // Ensure stars stay within the vertical bounds of the canvas (wrap around if needed)
+        // Use modulo to wrap stars vertically within the canvas
+        star.y = (star.y + canvas.height) % canvas.height;
 
         // Horizontal drifting effect
         star.x += driftSpeed;
 
-        // Mouse avoidance effect with increased responsiveness
+        // Mouse avoidance effect
         const dx = star.x - mouseX;
         const dy = star.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -88,18 +90,14 @@ function StarryBackground({ scrollContainerRef }) {
         if (distance < maxDistance) {
           const angle = Math.atan2(dy, dx);
           const moveDistance = (maxDistance - distance) / maxDistance;
-          star.x += Math.cos(angle) * moveDistance * 10; // Increased movement speed
+          star.x += Math.cos(angle) * moveDistance * 10;
           star.y += Math.sin(angle) * moveDistance * 10;
         }
 
-        // Wrap stars around edges
+        // Wrap stars around edges horizontally
         if (star.x > canvas.width) star.x = 0;
         if (star.x < 0) star.x = canvas.width;
-        if (star.y < 0) star.y = canvas.height;
-        if (star.y > canvas.height) star.y = 0;
       });
-
-      lastScrollY.current = currentScrollY;  // Update the scroll position after movement
     }
 
     function animate() {
