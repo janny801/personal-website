@@ -11,6 +11,7 @@ function App() {
   const [showCursor, setShowCursor] = useState(true);
   const [spacers, setSpacers] = useState(Array.from({ length: 10 })); // Initial invisible spacers
   const observerRef = useRef();
+  const scrollContainerRef = useRef(); // Reference for the scroll container
   const fullName = "Janred Salubayba";
   const typingSpeed = 150; // Adjust speed of typing in ms
   const maxSpacers = 50; // Set the maximum number of spacers
@@ -54,12 +55,12 @@ function App() {
         });
       }
     });
-    
+
     const lastSpacer = document.querySelector('.infinite-scroll-end');
     if (lastSpacer) {
       observerRef.current.observe(lastSpacer);
     }
-    
+
     return () => {
       if (lastSpacer) {
         observerRef.current.unobserve(lastSpacer);
@@ -70,8 +71,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <StarryBackground />
-        <div className="content">
+        <StarryBackground scrollContainerRef={scrollContainerRef} /> {/* Pass scrollContainerRef */}
+        <div className="content" ref={scrollContainerRef}>
           <h1>{displayedText}<span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span></h1>
           <nav>
             <Link to="/projects">Projects</Link>
