@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
+import realTimeChatImage from './proj-images/realtimechatapp.png'; // Import the image
 
 const projectData = [
   {
@@ -24,7 +25,7 @@ const projectData = [
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
     link: 'https://github.com/janny801/real-time-chat-app',
-    image: null, // Add image source if available
+    image: realTimeChatImage, // Assign the image source
   }
 ];
 
