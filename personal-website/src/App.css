@@ -625,3 +625,55 @@ nav a.active {
   margin: 40px auto; /* Center the container and give it top/bottom margin */
   padding: 20px;
 }
+
+
+
+
+
+
+/* projects styling */ 
+
+.projects-container {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.project-image {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 10px;
+}
+
+.project-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #61dafb;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', monospace;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #4a91c9;
+}
