@@ -47,11 +47,13 @@ function Projects() {
       <div className="slideshow">
         <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
         <div className="project-image">
-          <h3>Project {currentProject.id}: {currentProject.name}</h3>
           <p>Placeholder image for project {currentProject.id}</p>
         </div>
         <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
       </div>
+      
+      {/* Project name below the image */}
+      <h3 className="project-title">Project {currentProject.id}: {currentProject.name}</h3>
 
       {/* Project details section */}
       <div className="project-details">
