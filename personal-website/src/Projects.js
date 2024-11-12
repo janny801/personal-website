@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
-import realTimeChatImage from './proj-images/realtimechatapp.png'; // Import the image
+import realTimeChatImage from './proj-images/realtimechatapp.png';
+import spaceGameImage from './proj-images/spacegame.png'; // Import the new image
 
 const projectData = [
   {
@@ -9,7 +10,7 @@ const projectData = [
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
     link: 'https://github.com/janny801/hacktxproj',
-    image: aiChatImage, // Add image source here
+    image: aiChatImage, // Image source for AI Chat and PDF Summarizer
   },
   {
     id: 2,
@@ -17,7 +18,7 @@ const projectData = [
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
     link: 'https://github.com/janny801/Space-Odyssey-Project',
-    image: null, // Add image source if available
+    image: spaceGameImage, // Assign the new space game image
   },
   {
     id: 3,
@@ -25,7 +26,7 @@ const projectData = [
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
     link: 'https://github.com/janny801/real-time-chat-app',
-    image: realTimeChatImage, // Assign the image source
+    image: realTimeChatImage, // Image source for Real-Time Chat Application
   }
 ];
 
@@ -82,7 +83,6 @@ function Projects() {
       </div>
     </div>
   );
-  
 }
 
 export default Projects;
