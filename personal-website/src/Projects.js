@@ -24,7 +24,6 @@ const projectData = [
   }
 ];
 
-
 function Projects() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
@@ -46,14 +45,12 @@ function Projects() {
 
       {/* Slideshow container */}
       <div className="slideshow">
+        <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
         <div className="project-image">
           <h3>Project {currentProject.id}: {currentProject.name}</h3>
           <p>Placeholder image for project {currentProject.id}</p>
         </div>
-
-        {/* Slide navigation */}
-        <button onClick={prevProject}>Previous</button>
-        <button onClick={nextProject}>Next</button>
+        <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
       </div>
 
       {/* Project details section */}

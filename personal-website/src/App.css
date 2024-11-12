@@ -681,3 +681,41 @@ button {
 button:hover {
   background-color: #4a91c9;
 }
+
+
+
+/* Arrow Styling */
+.arrow {
+  font-size: 40px;
+  color: #61dafb;
+  cursor: pointer;
+  padding: 0 20px;
+  user-select: none;
+}
+
+.left-arrow {
+  position: relative;
+  right: 20px;
+}
+
+.right-arrow {
+  position: relative;
+  left: 20px;
+}
+
+.slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.project-image {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 10px;
+}
