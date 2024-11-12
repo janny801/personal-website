@@ -746,3 +746,42 @@ button:hover {
     font-size: 7vw; /* Larger for easier tapping */
   }
 }
+
+
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+  .projects-container {
+    max-width: 100vw; /* Take full width on mobile */
+    padding: 5px; /* Less padding on mobile */
+  }
+
+  .slideshow {
+    display: flex;
+    flex-direction: column; /* Stack image and left arrow on mobile */
+    align-items: center;
+  }
+
+  .project-image {
+    max-width: 100%; /* Let image fill the width on mobile */
+    margin-bottom: 10px;
+  }
+
+  /* Left arrow moves below image */
+  .left-arrow-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Space between image and left arrow */
+  }
+
+  /* Right arrow remains beside the image */
+  .right-arrow {
+    position: relative;
+    right: -20px; /* Adjust position as needed to align with image */
+  }
+
+  .arrow {
+    font-size: 7vw; /* Larger for easier tapping */
+    padding: 10px;
+  }
+}
