@@ -714,6 +714,8 @@ nav a.active {
   .slideshow {
     flex-direction: column; /* Stack image and arrows on mobile */
     align-items: center;
+    width: 80vw; /* Ensure slideshow takes full width */
+    padding: 0;
   }
 
   .project-image {
