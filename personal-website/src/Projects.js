@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 
 const projectData = [
   {
@@ -6,21 +7,24 @@ const projectData = [
     name: 'AI Chat and PDF Summarizer',
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
-    link: 'https://github.com/janny801/hacktxproj'
+    link: 'https://github.com/janny801/hacktxproj',
+    image: aiChatImage, // Add image source here
   },
   {
     id: 2,
     name: 'Space Odyssey Project',
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
-    link: 'https://github.com/janny801/Space-Odyssey-Project'
+    link: 'https://github.com/janny801/Space-Odyssey-Project',
+    image: null, // Add image source if available
   },
   {
     id: 3,
     name: 'Real-Time Chat Application',
     learnings: 'What I learned goes here.',
     experience: 'My experience making it goes here.',
-    link: 'https://github.com/janny801/real-time-chat-app'
+    link: 'https://github.com/janny801/real-time-chat-app',
+    image: null, // Add image source if available
   }
 ];
 
@@ -47,7 +51,11 @@ function Projects() {
       <div className="slideshow">
         <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
         <div className="project-image">
-          <p>Placeholder image for project {currentProject.id}</p>
+          {currentProject.image ? (
+            <img src={currentProject.image} alt={currentProject.name} />
+          ) : (
+            <p>Placeholder image for project {currentProject.id}</p>
+          )}
         </div>
         <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
       </div>

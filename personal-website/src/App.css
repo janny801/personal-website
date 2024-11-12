@@ -718,20 +718,28 @@ button:hover {
   margin: 20px 0;
 }
 
+
 .project-image {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 40px; /* Increase padding for larger area */
+  padding: 40px; /* Adjust padding for more space */
   border-radius: 10px;
-  width: 80%; /* Increase width as needed */
-  max-width: 600px; /* Increase max width for larger image */
-  height: 300px; /* Set a fixed height for larger display */
+  width: 100%; /* Make the container take up full width */
+  max-width: 1200px; /* Max width for larger images */
+  height: auto; /* Let the height adjust automatically */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 0 auto; /* Center the container horizontally */
   text-align: center;
 }
+
+.project-image img {
+  width: 100%; /* Make the image take up the full container width */
+  height: auto; /* Let the image height adjust according to its aspect ratio */
+  object-fit: contain; /* Ensure the image fits without distorting */
+}
+
 
 
 
