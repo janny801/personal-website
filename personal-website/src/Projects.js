@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 import realTimeChatImage from './proj-images/realtimechatapp.png';
-import spaceGameImage from './proj-images/spacegame.png'; // Import the new image
+import spaceGameImage from './proj-images/spacegame.png';
+import personalWebpageImage from './proj-images/personalwebpage.png'; // Import the new image
 
 const projectData = [
   {
@@ -27,6 +28,14 @@ const projectData = [
     experience: 'My experience making it goes here.',
     link: 'https://github.com/janny801/real-time-chat-app',
     image: realTimeChatImage, // Image source for Real-Time Chat Application
+  },
+  {
+    id: 4,
+    name: 'Personal Webpage',
+    learnings: 'What I learned goes here.',
+    experience: 'My experience making it goes here.',
+    link: 'https://github.com/janny801/personal-webpage',
+    image: personalWebpageImage, // Image source for Personal Webpage
   }
 ];
 
