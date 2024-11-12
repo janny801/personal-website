@@ -112,7 +112,10 @@ nav a.active {
 }
 
 .contact-links {
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the contact links */
+  text-align: center;
 }
 
 .contact-links p {
@@ -133,9 +136,14 @@ nav a.active {
   text-decoration: underline;
 }
 
+/* Positioning the Form */
 .contact-form {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers form elements */
 }
+
 
 /* Textbox and Textarea Styling */
 .contact-form input,
@@ -597,7 +605,6 @@ nav a.active {
 }
 
 
-
 /* Consistent Title Styling for All Sections */
 .contact-container h2,
 .aboutme-heading,
@@ -606,13 +613,8 @@ nav a.active {
   margin-bottom: 20px;
   font-family: 'Press Start 2P', monospace;
   font-weight: bold;
-  margin-top: 40px; /* Optional: adjust as needed for alignment */
-}
-
-.about-me-text p {
-  font-size: 15px; /* Increase the font size of the paragraph text */
-  line-height: 1.8; /* Increase line height for better readability */
-  margin-bottom: 20px; /* Optional: for additional spacing after each paragraph */
+  margin-top: 0; /* Reset top margin for consistency */
+  padding-top: 20px; /* Add consistent padding */
 }
 
 /* General Container Styling */
@@ -621,11 +623,17 @@ nav a.active {
 .projects-container {
   text-align: center;
   color: white;
-  max-width: 600px;
-  margin: 40px auto; /* Center the container and give it top/bottom margin */
-  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px 50px; /* Consistent padding: top, sides, bottom */
 }
 
+
+.about-me-text p {
+  font-size: 15px; /* Increase the font size of the paragraph text */
+  line-height: 1.8; /* Increase line height for better readability */
+  margin-bottom: 20px; /* Optional: for additional spacing after each paragraph */
+}
 
 
 
