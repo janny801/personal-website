@@ -3,6 +3,8 @@ import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 import realTimeChatImage from './proj-images/realtimechatapp.png';
 import spaceGameImage from './proj-images/spacegame.png';
 import personalWebpageImage from './proj-images/personalwebpage.png'; // Import the new image
+import './App.css';
+
 
 const projectData = [
   {

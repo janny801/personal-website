@@ -607,14 +607,22 @@ nav a.active {
 
 /* Consistent Title Styling for All Sections */
 .contact-container h2,
-.aboutme-heading,
-.projects-heading {
+.aboutme-heading{
   font-size: 24px;
   margin-bottom: 20px;
   font-family: 'Press Start 2P', monospace;
   font-weight: bold;
-  margin-top: 0; /* Reset top margin for consistency */
+  margin-top: 0px; /* Reset top margin for consistency */
   padding-top: 20px; /* Add consistent padding */
+}
+.projects-heading 
+{
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-weight: bold;
+  margin-top: 0px; /* Reset top margin for consistency */
+  padding-top: 30px; /* Add consistent padding */
 }
 
 /* General Container Styling */
