@@ -633,6 +633,10 @@ nav a.active {
   line-height: 1.8; /* Increase line height for better readability */
   margin-bottom: 20px; /* Optional: for additional spacing after each paragraph */
 }
+
+
+
+
 /* Projects Styling */
 .projects-container {
   text-align: center;
@@ -680,14 +684,14 @@ nav a.active {
 
 .left-arrow {
   position: absolute;
-  left: -20px; /* Closer to the image */
+  left: 30px; /* Closer to the image */
   top: 50%;
   transform: translateY(-50%);
 }
 
 .right-arrow {
   position: absolute;
-  right: -20px; /* Closer to the image */
+  right: 30px; /* Closer to the image */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -713,7 +717,7 @@ nav a.active {
   }
 
   .arrow {
-    font-size: 7vw; /* Larger for easier tapping */
+    font-size: 5vw; /* Larger for easier tapping */
     padding: 10px;
   }
 
