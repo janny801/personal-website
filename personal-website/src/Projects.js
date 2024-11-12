@@ -43,14 +43,12 @@ function Projects() {
   };
 
   const currentProject = projectData[currentProjectIndex];
-
   return (
     <div className="projects-container">
       <h2 className="projects-heading">Here are my projects.</h2>
-
+  
       {/* Slideshow container */}
       <div className="slideshow">
-        <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
         <div className="project-image">
           {currentProject.image ? (
             <img src={currentProject.image} alt={currentProject.name} />
@@ -58,20 +56,25 @@ function Projects() {
             <p>Placeholder image for project {currentProject.id}</p>
           )}
         </div>
-        <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
+  
+        {/* Arrow container for bottom positioning on mobile */}
+        <div className="arrow-container">
+          <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
+          <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
+        </div>
       </div>
       
       {/* Project name below the image */}
       <h3 className="project-title">Project {currentProject.id}: {currentProject.name}</h3>
-
+  
       {/* Project details section */}
       <div className="project-details">
         <h3>What I Learned</h3>
         <p>{currentProject.learnings}</p>
-
+  
         <h3>My Experience Making It</h3>
         <p>{currentProject.experience}</p>
-
+  
         <h3>Check Out This Project Further</h3>
         <a href={currentProject.link} target="_blank" rel="noopener noreferrer">
           {currentProject.name} on GitHub
@@ -79,6 +82,7 @@ function Projects() {
       </div>
     </div>
   );
+  
 }
 
 export default Projects;
