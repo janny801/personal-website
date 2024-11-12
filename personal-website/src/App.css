@@ -721,12 +721,18 @@ button:hover {
 .project-image {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 20px;
+  padding: 40px; /* Increase padding for larger area */
   border-radius: 10px;
-  width: 100%;
-  max-width: 400px;
+  width: 80%; /* Increase width as needed */
+  max-width: 600px; /* Increase max width for larger image */
+  height: 300px; /* Set a fixed height for larger display */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 10px;
+  text-align: center;
 }
+
 
 
 .project-title {
