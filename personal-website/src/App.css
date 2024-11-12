@@ -668,6 +668,8 @@ nav a.active {
   padding: 10px;
   border-radius: 10px;
   width: 100%;
+  aspect-ratio: 16 / 10;
+
   max-width: 80%;
   margin: 0 auto;
   height: auto;
@@ -681,6 +683,9 @@ nav a.active {
   height: auto;
   object-fit: contain;
 }
+
+
+
 
 /* Arrow Styling */
 .arrow {
