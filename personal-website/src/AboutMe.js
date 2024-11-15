@@ -13,7 +13,13 @@ function AboutMe() {
           My experience spans roles like developing databases for NASA and creating interactive applications, from AI-driven chatbots to real-time web platforms.
         </p>
         <p>
-          I enjoy working on projects that bridge technical skill and creativity, constantly aiming to improve user experiences through efficient design and functionality. With a focus on continuous learning, I'm excited to make impactful contributions in technology-driven fields.
+          I am also a member of the Society of Asian Scientists and Engineers (SASE) at the University of Houston where I'm focusing on enhancing my soft skills and career preparation. 
+        </p>
+        <p>
+          As someone who spends a lot of time on the internet. I find inspiration in the projects and websites that I come across. This fuels my passion to create projects that blend technical ability and creativity. 
+        </p>
+        <p>
+          Currently, I'm seeking internship opportunities in software development or database management and development, where I can apply my skills and continue learning. Recently, I've also been developing an interest in cybersecurity, expanding my understanding of technology’s critical role in secure data management. With a focus on continuous growth, I'm excited to make impactful contributions in technology-driven fields.
         </p>
       </div>
     </div>
@@ -21,3 +27,8 @@ function AboutMe() {
 }
 
 export default AboutMe;
+
+
+/*need to include image here as well */ 
+
+
