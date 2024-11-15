@@ -749,8 +749,16 @@ nav a.active {
 }
 
 .project-details-section {
-  border: 1px solid #fff; /* Adjust color as needed */
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px; /* Rounded corners */
+  width: 80%; /* Matches the width of your inputs and textarea */
+  max-width: 65vw; /* Aligns with the max-width of the contact form */
+  padding: 10px; /* Consistent padding */
+  font-size: 16px; /* Matches font size */
+  font-family: 'Press Start 2P', monospace; /* Same retro font */
+  color: whitesmoke; /* Text color to match input */
+  background-color: #040416; /* Same background color as inputs */
+  border: 2px solid #61dafb; /* Thick, bright blue border */
+  border-radius: 5px; /* Same rounded corners */
+  margin: 15px auto; /* Centered with margin spacing */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow for depth */
 }
+
