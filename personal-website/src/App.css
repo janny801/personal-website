@@ -742,3 +742,15 @@ nav a.active {
     transform: none;
   }
 }
+
+
+.project-details p {
+  white-space: pre-wrap;
+}
+
+.project-details-section {
+  border: 1px solid #fff; /* Adjust color as needed */
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Rounded corners */
+}
