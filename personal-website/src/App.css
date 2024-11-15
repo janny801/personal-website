@@ -637,7 +637,7 @@ nav a.active {
 }
 
 .about-me-text p {
-  font-size: 18px; /* Increase the font size of the paragraph text */
+  font-size: 15px; /* Increase the font size of the paragraph text */
   line-height: 1.8; /* Increase line height for better readability */
   margin-bottom: 20px; /* Optional: for additional spacing after each paragraph */
 }
