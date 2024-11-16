@@ -1,33 +1,11 @@
 /* General body styling */
 body {
-  margin: 0;
   background-color: #040416;
   font-family: 'Press Start 2P', monospace;
   overflow-y: auto; /* Allow vertical scrolling */
   
 }
 
-
-/* For WebKit browsers (Chrome, Edge, Safari, Opera GX) */
-::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-  background-color: #040416; /* Black background matching your theme */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: black; /* Black scrollbar thumb */
-  border-radius: 5px; /* Rounded corners for a smoother appearance */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #333; /* Slightly lighter on hover for visibility */
-}
-
-/* For Firefox (using scrollbar-color property) */
-html {
-  scrollbar-color: black #040416; /* Thumb color (black) and track color (#040416) */
-  scrollbar-width: thin; /* Makes the scrollbar thinner */
-}
 
 
 
@@ -79,9 +57,6 @@ html {
   visibility: hidden; /* Make them invisible */
 }
 
-.infinite-scroll-container {
-  padding-bottom: 100px; /* Additional space at the bottom */
-}
 
 
 
@@ -657,6 +632,7 @@ nav a.active {
 
 .about-me-text p {
   white-space: pre-wrap;
+  overflow: hidden; 
 
   font-size:16px;
   line-height: 2; /* Increases line spacing */
@@ -767,31 +743,26 @@ nav a.active {
 
 .project-details p {
   white-space: pre-wrap;
-  line-height: 2; /* Increases line spacing */
-  margin-bottom: 15px; /* Adds spacing between paragraphs */
+  overflow-wrap: break-word;
+  line-height: 2;
+  margin-bottom: 15px;
 }
-
 .project-details-section {
-  width: 80%; /* Matches the width of your inputs and textarea */
-  max-width: 65vw; /* Aligns with the max-width of the contact form */
-  padding: 10px; /* Consistent padding */
-  font-size: 16px; /* Matches font size */
-  font-family: 'Press Start 2P', monospace; /* Same retro font */
-  color: whitesmoke; /* Text color to match input */
-  background-color: rgba(4, 4, 22, 0.8); /* Slightly transparent dark background */
-  
-  
-  border: 2px solid #61dafb; /* Thick, bright blue border */
-  border-radius: 5px; /* Same rounded corners */
-  margin: 15px auto; /* Centered with margin spacing */
-  margin-bottom: 25px; /* Adds spacing between paragraphs */
-
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow for depth */
+  width: 80%;
+  max-width: 65vw;
+  padding: 10px;
+  margin: 15px auto;
+  margin-bottom: 25px;
+  background-color: rgba(4, 4, 22, 0.8);
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 
 .project-title {
   font-size: 20px; /* Larger font size for emphasis */
+  overflow :hidden; 
   text-align: center; /* Centers the text */
   margin: 20px 0 10px 0; /* Adds spacing above and below */
   text-decoration: underline; /* Underlines the project name */
@@ -801,6 +772,7 @@ nav a.active {
 
 
 .project-link-section {
+  
   margin-top: 50px; /* Adds spacing between the details section and the link */
   text-align: center; /* Centers the text and link */
 }
@@ -818,4 +790,13 @@ nav a.active {
 
 .project-link-section a:hover {
   text-decoration: underline; /* Adds underline on hover */
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
 }
