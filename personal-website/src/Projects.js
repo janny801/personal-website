@@ -96,7 +96,7 @@ function Projects() {
   const currentProject = projectData[currentProjectIndex];
   return (
     <div className="projects-container">
-      <h2 className="projects-heading">Here are my projects.</h2>
+      <h2 className="projects-heading">Projects</h2>
   
       {/* Slideshow container */}
       <div className="slideshow">
