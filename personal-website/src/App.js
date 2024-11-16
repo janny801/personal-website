@@ -11,10 +11,8 @@ function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [spacers, setSpacers] = useState(Array.from({ length: 10 }));
-  const [showAstronaut, setShowAstronaut] = useState(false);
   const scrollContainerRef = useRef();
   const spacerLimitReached = useRef(false);
-  const isAtBottom = useRef(false); // Track if the user is at the bottom
   const fullName = "Janred Salubayba";
   const typingSpeed = 150;
   const maxSpacers = 50;
@@ -61,7 +59,7 @@ function App() {
           });
         }
       },
-      { threshold: 1.0 } // Trigger only when fully in view
+      { threshold: 1.0 }
     );
 
     const lastSpacer = document.querySelector('.infinite-scroll-end');
@@ -73,95 +71,6 @@ function App() {
       observer.disconnect();
     };
   }, [spacers]);
-
-  // Observer for astronaut visibility
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setShowAstronaut(entry.isIntersecting);
-      },
-      { threshold: 1.0 }
-    );
-
-    const spacer45 = document.querySelector('.spacer-45');
-    if (spacer45) {
-      observer.observe(spacer45);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [spacers]);
-
-  // Throttle-based scroll handler for smoother performance
-  useEffect(() => {
-    let scrollThrottleTimeout = null;
-
-    const handleScroll = () => {
-      if (scrollThrottleTimeout) return;
-
-      scrollThrottleTimeout = setTimeout(() => {
-        const scrollContainer = scrollContainerRef.current;
-        if (scrollContainer) {
-          const isUserAtBottom =
-            scrollContainer.scrollHeight - scrollContainer.scrollTop <=
-            scrollContainer.clientHeight + 5; // Buffer for smoothness
-
-          isAtBottom.current = isUserAtBottom;
-
-          if (
-            isUserAtBottom &&
-            spacers.length < maxSpacers &&
-            !spacerLimitReached.current
-          ) {
-            setSpacers((prevSpacers) => [
-              ...prevSpacers,
-              ...Array.from({ length: 10 }),
-            ]);
-          }
-        }
-
-        scrollThrottleTimeout = null; // Reset throttle
-      }, 100); // Throttle interval (100ms)
-    };
-
-    const scrollContainer = scrollContainerRef.current;
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleScroll);
-    }
-
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', handleScroll);
-      }
-      if (scrollThrottleTimeout) {
-        clearTimeout(scrollThrottleTimeout);
-      }
-    };
-  }, [spacers]);
-
-  // Debugging and tab switching
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        console.log('Tab is active. Rechecking scroll position...');
-        const scrollContainer = scrollContainerRef.current;
-        if (scrollContainer && isAtBottom.current) {
-          setSpacers((prevSpacers) => [
-            ...prevSpacers,
-            ...Array.from({ length: 10 }),
-          ]);
-        }
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, []);
 
   return (
     <Router>
@@ -184,24 +93,24 @@ function App() {
           </Routes>
           <div className="infinite-scroll-container">
             {spacers.map((_, index) => (
-              <div key={index} className={`spacer ${index === 45 ? 'spacer-45' : ''}`}></div>
+              <div
+                key={index}
+                className={`spacer ${index === 45 ? 'spacer-45' : ''}`}
+              >
+                {index === 45 ? (
+                  <img
+                    src={astronautImage}
+                    alt="Astronaut"
+                    className="astronaut-image"
+                  />
+                ) : (
+                  '' // Remove text and make other spacers empty
+                )}
+              </div>
             ))}
             <div className="infinite-scroll-end"></div>
           </div>
         </div>
-
-        {/* Conditional rendering for astronaut */}
-        {showAstronaut && (
-          <div className="astronaut-container visible">
-            <div className="astronaut-wrapper">
-              <img
-                src={astronautImage}
-                alt="Astronaut sending a message"
-                className="astronaut-image"
-              />
-            </div>
-          </div>
-        )}
       </div>
     </Router>
   );

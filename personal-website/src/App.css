@@ -53,10 +53,30 @@ body {
 }
 
 .spacer {
-  height: 100px; /* Adjust height as needed to control scroll speed */
-  visibility:hidden; 
+  height: 100px; /* Maintain the height of each spacer */
+  margin: 10px 0; /* Add space between spacers */
+  background-color: transparent; /* Make the background transparent */
+  color: transparent; /* Make the text invisible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: none; /* Remove the border */
 }
 
+.spacer-45 {
+  background-color: transparent; /* Ensure no background for spacer 45 */
+  color: transparent; /* Make any text invisible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacer-45 img {
+  display: block; /* Ensure the image is displayed */
+  width: 200px; /* Adjust the size of the astronaut image */
+  height: auto;
+}
 
 
 
@@ -906,42 +926,36 @@ html {
 }
 
 
-
-
-
-.astronaut-container {
-  position: fixed;
-  top: 50%; /* Center vertically */
+.astronaut-container.absolute {
+  position: absolute; /* Position relative to the page content */
+  bottom: 0; /* Stick to the bottom of spacer 45 */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for exact center */
-  z-index: 1000; /* Place on top of other elements */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
-  pointer-events: none; /* Ignore pointer events */
+  transform: translateX(-50%); /* Perfectly center */
+  z-index: 1000;
 }
 
-.astronaut-container.visible {
-  opacity: 1; /* Make visible when the class is toggled */
-  pointer-events: auto; /* Allow interactions only when visible */
+.astronaut-container.fixed {
+  position: fixed; /* Position relative to the viewport */
+  bottom: 0; /* Stick to the bottom of the screen */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Perfectly center */
+  z-index: 1000;
 }
 
-.astronaut-wrapper {
-  animation: floating 3s infinite ease-in-out; /* Add floating animation */
-}
-
-.astronaut-container img {
-  width: 200px; /* Adjust the image size */
+.astronaut-image {
+  width: 150px; /* Adjust size of the astronaut */
   height: auto;
+  animation: floating 3s infinite ease-in-out; /* Add floating effect */
 }
 
 @keyframes floating {
   0% {
-    transform: translateY(0); /* Start at initial position */
+    transform: translateY(0); /* Start position */
   }
   50% {
-    transform: translateY(-20px); /* Float upward */
+    transform: translateY(-10px); /* Float upward */
   }
   100% {
-    transform: translateY(0); /* Return to initial position */
+    transform: translateY(0); /* Return to start */
   }
 }
