@@ -746,6 +746,8 @@ nav a.active {
 
 .project-details p {
   white-space: pre-wrap;
+  line-height: 2; /* Increases line spacing */
+  margin-bottom: 15px; /* Adds spacing between paragraphs */
 }
 
 .project-details-section {
@@ -755,10 +757,23 @@ nav a.active {
   font-size: 16px; /* Matches font size */
   font-family: 'Press Start 2P', monospace; /* Same retro font */
   color: whitesmoke; /* Text color to match input */
-  background-color: #040416; /* Same background color as inputs */
+  background-color: rgba(4, 4, 22, 0.8); /* Slightly transparent dark background */
+  
+  
   border: 2px solid #61dafb; /* Thick, bright blue border */
   border-radius: 5px; /* Same rounded corners */
   margin: 15px auto; /* Centered with margin spacing */
+  margin-bottom: 25px; /* Adds spacing between paragraphs */
+
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow for depth */
 }
 
+
+.project-title {
+  font-size: 20px; /* Larger font size for emphasis */
+  text-align: center; /* Centers the text */
+  margin: 20px 0 10px 0; /* Adds spacing above and below */
+  text-decoration: underline; /* Underlines the project name */
+  color: whitesmoke; /* Matches the rest of the text color */
+  font-family: 'Press Start 2P', monospace; /* Retro font style */
+}
