@@ -92,25 +92,27 @@ function App() {
             <Route path="/contact" element={<ContactMe />} />
           </Routes>
           <div className="infinite-scroll-container">
-            {spacers.map((_, index) => (
-              <div
-                key={index}
-                className={`spacer ${index === 44 ? 'spacer-44' : index === 45 ? 'spacer-45' : ''}`}
-              >
-                {index === 44 && (
-                  <div className="speech-bubble">
-                    Thank you for visiting my website! 
-                  </div>
-                )}
-                {index === 45 && (
-                  <img
-                    src={astronautImage}
-                    alt="Astronaut"
-                    className="astronaut-image"
-                  />
-                )}
-              </div>
-            ))}
+          {spacers.map((_, index) => (
+  <div
+    key={index}
+    className={`spacer ${index === 44 ? 'spacer-44' : index === 45 ? 'spacer-45' : ''}`}
+  >
+    {index === 44 && (
+      <div className="speech-bubble">
+        Thank you for visiting my website!
+        <div className="speech-bubble-tail"></div>
+      </div>
+    )}
+    {index === 45 && (
+      <img
+        src={astronautImage}
+        alt="Astronaut"
+        className="astronaut-image"
+      />
+    )}
+  </div>
+))}
+
             <div className="infinite-scroll-end"></div>
           </div>
         </div>

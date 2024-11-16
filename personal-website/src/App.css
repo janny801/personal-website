@@ -97,7 +97,7 @@ body {
 
 .spacer-45 img {
   display: block; /* Ensure the image is displayed */
-  width: 200px; /* Adjust the size of the astronaut image */
+  width: 150px; /* Adjust the size of the astronaut image */
   height: auto;
 }
 
@@ -1000,17 +1000,54 @@ html {
 }
 
 .astronaut-image {
-  width: 150px; /* Adjust image size */
+  width: 100px; /* Adjust image size */
 }
 
 .speech-bubble {
-  position: relative; /* Position relative to the astronaut-container */
-  margin-top: 10px; /* Add space above the astronaut */
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-size: 14px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  white-space: nowrap; /* Prevent wrapping of text */
+  position: relative; /* Position relative to the astronaut */
+  margin-top: 10px; /* Space above the astronaut */
+  background: rgba(255, 255, 255, 0.9); /* Bubble color */
+  color: #000; /* Text color */
+  padding: 10px 15px; /* Inner padding for text */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 14px; /* Text size */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  text-align: center; /* Center text */
+  word-wrap: break-word; /* Handle long text wrapping */
+  white-space: normal; /* Allow text to wrap to a new line */
+
+  line-height: 1.5; /* Improve line spacing */
+}
+
+/* Tail pointing to astronaut */
+.speech-bubble-tail {
+  position: absolute;
+  bottom: -10px; /* Position tail below the bubble */
+  left: 50%; /* Center-align tail */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent; /* Create the triangle */
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.9); /* Match bubble color */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 600px) {
+  .spacer-44 .speech-bubble {
+    font-size: 12px; /* Smaller font size for mobile screens */
+    max-width: 300px; /* Narrower bubble */
+    padding: 12px 18px; /* Adjust padding for space */
+    white-space: normal; /* Allow text wrapping */
+    line-height: 1.4; /* Adjust line height for readability */
+  }
+
+  .spacer-44 .speech-bubble-tail {
+    bottom: -8px; /* Adjust tail positioning */
+    border-top: 8px solid rgba(255, 255, 255, 0.9); /* Adjust size of tail */
+  }
+  .spacer-45 img {
+    width: 100px; /* Reduce the astronaut size for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
 }
