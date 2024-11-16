@@ -4,19 +4,19 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Projects from './Projects';
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
-import astronautImage from './proj-images/astronautflying.webp'; // Import astronaut image
+import astronautImage from './proj-images/astronautflying.webp';
 import './App.css';
 
 function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
-  const [spacers, setSpacers] = useState(Array.from({ length: 10 })); // Initial invisible spacers
-  const [showAstronaut, setShowAstronaut] = useState(false); // State to toggle astronaut visibility
-  const observerRef = useRef();
-  const scrollContainerRef = useRef(); // Reference for the scroll container
+  const [spacers, setSpacers] = useState(Array.from({ length: 10 }));
+  const [showAstronaut, setShowAstronaut] = useState(false);
+  const scrollContainerRef = useRef();
+  const spacerLimitReached = useRef(false);
   const fullName = "Janred Salubayba";
-  const typingSpeed = 150; // Adjust speed of typing in ms
-  const maxSpacers = 50; // Set the maximum number of spacers
+  const typingSpeed = 150;
+  const maxSpacers = 50;
 
   // Typing effect
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
         setDisplayedText(fullName.slice(0, index + 1));
         index++;
       } else {
-        clearInterval(typingInterval); // Stop the interval once full text is displayed
+        clearInterval(typingInterval);
       }
     }, typingSpeed);
 
@@ -37,48 +37,76 @@ function App() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 500); // Adjust speed of blinking
+    }, 500);
 
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Infinite scroll observer with a maximum spacer limit
+  // Infinite scroll with limits
   useEffect(() => {
-    observerRef.current = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        // Add more invisible spacers only if the current number is less than maxSpacers
-        setSpacers((prevSpacers) => {
-          if (prevSpacers.length < maxSpacers) {
+    if (spacerLimitReached.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setSpacers((prevSpacers) => {
+            if (prevSpacers.length >= maxSpacers) {
+              spacerLimitReached.current = true;
+              observer.disconnect(); // Stop observing once limit is reached
+              return prevSpacers;
+            }
             return [...prevSpacers, ...Array.from({ length: 10 })];
-          } else {
-            observerRef.current.disconnect(); // Stop observing once the limit is reached
-            return prevSpacers;
-          }
-        });
-      }
-    });
+          });
+        }
+      },
+      { threshold: 1.0 } // Trigger only when fully in view
+    );
 
     const lastSpacer = document.querySelector('.infinite-scroll-end');
     if (lastSpacer) {
-      observerRef.current.observe(lastSpacer);
+      observer.observe(lastSpacer);
     }
 
     return () => {
-      if (lastSpacer) {
-        observerRef.current.unobserve(lastSpacer);
-      }
+      observer.disconnect();
     };
   }, [spacers]);
 
-  // Show astronaut when near the bottom
+  // Observer for astronaut visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setShowAstronaut(entry.isIntersecting);
+      },
+      { threshold: 1.0 }
+    );
+
+    const spacer45 = document.querySelector('.spacer-45');
+    if (spacer45) {
+      observer.observe(spacer45);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [spacers]);
+
+  // Scroll-based fallback to ensure smooth scrolling
   useEffect(() => {
     const handleScroll = () => {
       const scrollContainer = scrollContainerRef.current;
       if (scrollContainer) {
-        const isNearBottom =
+        const isAtBottom =
           scrollContainer.scrollHeight - scrollContainer.scrollTop <=
-          scrollContainer.clientHeight + 200; // Adjust the threshold (200px here)
-        setShowAstronaut(isNearBottom); // Show astronaut if near the bottom
+          scrollContainer.clientHeight + 5; // Small buffer for smoothness
+        if (isAtBottom && spacers.length < maxSpacers && !spacerLimitReached.current) {
+          setSpacers((prevSpacers) => [
+            ...prevSpacers,
+            ...Array.from({ length: 10 }),
+          ]);
+        }
       }
     };
 
@@ -92,14 +120,17 @@ function App() {
         scrollContainer.removeEventListener('scroll', handleScroll);
       }
     };
-  }, []);
+  }, [spacers]);
 
   return (
     <Router>
       <div className="App">
-        <StarryBackground scrollContainerRef={scrollContainerRef} /> {/* Pass scrollContainerRef */}
+        <StarryBackground scrollContainerRef={scrollContainerRef} />
         <div className="content" ref={scrollContainerRef}>
-          <h1>{displayedText}<span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span></h1>
+          <h1>
+            {displayedText}
+            <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
+          </h1>
           <nav>
             <Link to="/projects">Projects</Link>
             <Link to="/about">About Me</Link>
@@ -112,16 +143,22 @@ function App() {
           </Routes>
           <div className="infinite-scroll-container">
             {spacers.map((_, index) => (
-              <div key={index} className="spacer"></div>
+              <div key={index} className={`spacer ${index === 45 ? 'spacer-45' : ''}`}></div>
             ))}
             <div className="infinite-scroll-end"></div>
           </div>
         </div>
 
         {/* Conditional rendering for astronaut */}
-        <div className={`astronaut-container ${showAstronaut ? 'visible' : ''}`}>
-          <img src={astronautImage} alt="Astronaut sending a message" className="astronaut-image" />
-        </div>
+        {showAstronaut && (
+          <div className="astronaut-container visible">
+            <img
+              src={astronautImage}
+              alt="Astronaut sending a message"
+              className="astronaut-image"
+            />
+          </div>
+        )}
       </div>
     </Router>
   );
