@@ -2,7 +2,7 @@
 body {
   background-color: #040416;
   font-family: 'Press Start 2P', monospace;
-  overflow-y: scroll; /* Allow vertical scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
   
 }
 
@@ -794,7 +794,7 @@ nav a.active {
 
 
 ::-webkit-scrollbar {
-  display: none;
+  display:none;
 }
 
 html {
