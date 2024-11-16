@@ -106,7 +106,7 @@ function Projects() {
       </div>
       
       {/* Project name below the image */}
-      <h3 className="project-title">Project {currentProject.id}: {currentProject.name}</h3>
+      <h3 className="project-title">{currentProject.name}</h3>
   
       {/* Project details section */}
       <div className="project-details">
@@ -120,14 +120,15 @@ function Projects() {
           <p>{currentProject.experience}</p>
         </div>
   
-        
+        <div className="project-link-section">
+
           <h3>Check Out This Project Further</h3>
           <a href={currentProject.link} target="_blank" rel="noopener noreferrer">
             {currentProject.name} on GitHub
           </a>
         </div>
       </div>
-
+</div>
   );
 }
 

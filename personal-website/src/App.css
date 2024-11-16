@@ -777,3 +777,24 @@ nav a.active {
   color: whitesmoke; /* Matches the rest of the text color */
   font-family: 'Press Start 2P', monospace; /* Retro font style */
 }
+
+
+.project-link-section {
+  margin-top: 20px; /* Adds spacing between the details section and the link */
+  text-align: center; /* Centers the text and link */
+}
+
+.project-link-section h3 {
+  margin-bottom: 10px; /* Adds spacing below the heading */
+  font-size: 18px; /* Adjust font size for better readability */
+}
+
+.project-link-section a {
+  color: #61dafb; /* Matches link color */
+  text-decoration: none;
+  font-size: 16px; /* Consistent font size for the link */
+}
+
+.project-link-section a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
