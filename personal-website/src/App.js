@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Projects from './Projects';
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
+import astronautImage from './proj-images/astronautflying.webp'; // Import astronaut image
 import './App.css';
 
 function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [spacers, setSpacers] = useState(Array.from({ length: 10 })); // Initial invisible spacers
+  const [showAstronaut, setShowAstronaut] = useState(false); // State to toggle astronaut visibility
   const observerRef = useRef();
   const scrollContainerRef = useRef(); // Reference for the scroll container
   const fullName = "Janred Salubayba";
@@ -68,6 +70,30 @@ function App() {
     };
   }, [spacers]);
 
+  // Show astronaut when scrolled to the bottom
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollContainer = scrollContainerRef.current;
+      if (scrollContainer) {
+        const isAtBottom =
+          scrollContainer.scrollHeight - scrollContainer.scrollTop ===
+          scrollContainer.clientHeight;
+        setShowAstronaut(isAtBottom); // Show astronaut if scrolled to the bottom
+      }
+    };
+
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -91,6 +117,13 @@ function App() {
             <div className="infinite-scroll-end"></div>
           </div>
         </div>
+
+        {/* Conditional rendering for astronaut */}
+        {showAstronaut && (
+          <div className="astronaut-container">
+            <img src={astronautImage} alt="Astronaut sending a message" className="astronaut-image" />
+          </div>
+        )}
       </div>
     </Router>
   );

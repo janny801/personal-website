@@ -96,7 +96,7 @@ nav a.active {
   color: #61dafb;
 }
 
-/* Contact container styling */
+/* General container styling */
 .contact-container {
   text-align: center;
   color: white;
@@ -110,28 +110,129 @@ nav a.active {
   margin: 0 auto;
   font-size: 16px;
   margin-bottom: 20px;
+  line-height: 1.5; /* Improve readability */
 }
 
+
+/* General container styling */
+.contact-container {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Press Start 2P', monospace; /* Use pixel-art font for retro style */
+}
+
+.contact-container p {
+  max-width: 90vw;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* Contact links styling */
 .contact-links {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the contact links */
-  text-align: center;
+  align-items: center;
+  gap: 15px; /* Space between each contact item */
+  width: 100%;
 }
 
 .contact-links p {
-  font-size: 18px;
-  margin: 10px 0;
+  font-size: 14px; /* Match the retro aesthetic */
+  margin: 10px 0; /* Add spacing between items */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Stack label and value on separate lines */
+  align-items: center; /* Center-align text */
+  text-align: center; /* Ensure text is centered */
+  width: 100%;
+  max-width: 90vw; /* Prevent links from overflowing the screen width */
+}
+
+.contact-links p span {
+  font-weight: bold;
+  font-family: 'Press Start 2P', monospace; /* Retro font for labels */
+  margin-bottom: 5px; /* Add spacing below label */
 }
 
 .contact-links p a {
-  margin-left: 5px;
+  display: block; /* Ensure links always appear on a new line */
   color: #61dafb;
   text-decoration: none;
+  font-family: 'Press Start 2P', monospace; /* Retro font for links */
+  word-wrap: break-word; /* Allow links to wrap if necessary */
+  font-size: 14px;
+  text-align: center; /* Center-align links */
 }
+
+.contact-links p a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for small screens */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 15px;
+  }
+
+  .contact-container p {
+    font-size: 12px;
+  }
+
+  .contact-links {
+    gap: 10px;
+  }
+
+  .contact-links p {
+    flex-direction: column; /* Stack label and value */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-links p span {
+    margin: 0 0 5px 0;
+  }
+
+  .contact-links p a {
+    font-size: 12px;
+    word-wrap: break-word;
+  }
+}
+
+/* Media query for extra small screens (very narrow phones) */
+@media (max-width: 320px) {
+  .contact-container {
+    padding: 10px;
+  }
+
+  .contact-container p {
+    font-size: 12px;
+  }
+
+  .contact-links {
+    gap: 8px;
+  }
+
+  .contact-links p {
+    font-size: 12px;
+  }
+
+  .contact-links p a {
+    font-size: 11px;
+  }
+}
+
+
+
+
+
+
+
+
 
 .contact-links a:hover {
   text-decoration: underline;
@@ -184,6 +285,9 @@ nav a.active {
 .contact-form button:hover {
   background-color: #4a91c9;
 }
+
+
+
 
 /* Banner Styling */
 .banner {
@@ -799,4 +903,25 @@ nav a.active {
 
 html {
   scrollbar-width: none;
+}
+
+
+/* Centering the astronaut in the middle of the page */
+.astronaut-container {
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact center */
+  z-index: 1000; /* Place on top of other elements */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.astronaut-container img {
+  width: 200px; /* Adjust the image size */
+  height: auto;
+}
+
+.astronaut-container.visible {
+  opacity: 1; /* Make visible when the class is toggled */
 }
