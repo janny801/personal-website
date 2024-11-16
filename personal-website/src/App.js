@@ -70,15 +70,15 @@ function App() {
     };
   }, [spacers]);
 
-  // Show astronaut when scrolled to the bottom
+  // Show astronaut when near the bottom
   useEffect(() => {
     const handleScroll = () => {
       const scrollContainer = scrollContainerRef.current;
       if (scrollContainer) {
-        const isAtBottom =
-          scrollContainer.scrollHeight - scrollContainer.scrollTop ===
-          scrollContainer.clientHeight;
-        setShowAstronaut(isAtBottom); // Show astronaut if scrolled to the bottom
+        const isNearBottom =
+          scrollContainer.scrollHeight - scrollContainer.scrollTop <=
+          scrollContainer.clientHeight + 200; // Adjust the threshold (200px here)
+        setShowAstronaut(isNearBottom); // Show astronaut if near the bottom
       }
     };
 
@@ -119,11 +119,9 @@ function App() {
         </div>
 
         {/* Conditional rendering for astronaut */}
-        {showAstronaut && (
-          <div className="astronaut-container">
-            <img src={astronautImage} alt="Astronaut sending a message" className="astronaut-image" />
-          </div>
-        )}
+        <div className={`astronaut-container ${showAstronaut ? 'visible' : ''}`}>
+          <img src={astronautImage} alt="Astronaut sending a message" className="astronaut-image" />
+        </div>
       </div>
     </Router>
   );
