@@ -63,8 +63,18 @@ We were taught using C/C++ and personally found it quite difficult to understand
   {
     id: 4,
     name: 'Personal Webpage',
-    learnings: 'What I learned goes here.',
-    experience: 'My experience making it goes here.',
+    learnings: `The main technical skills I learned creating this project included React.js, Email.js, JavaScript, CSS, real-time rendering, and event-driven programming. 
+
+I learned how to use state management and routing in React, particularly using React Router to navigate between sections of the website. 
+
+I also learned how to implement custom animations and effects such as the dynamic starry background. This involved using event-driven programming to detect user interactions. 
+
+Additionally, using Email.js in the "Contact Me" section allowed me to integrate a seamless email submission feature. 
+
+Overall, this project allowed me to expand my front-end development skills and gain experience in creating interactive web applications.`,
+    experience: `This project was a personal endeavor to showcase my current portfolio and technical skills. 
+
+I also used it as an opportunity to learn React.js, which is something that I had wanted to learn for a while in my aspirations to become a flexible full-stack developer.`,
     link: 'https://github.com/janny801/personal-webpage',
     image: personalWebpageImage, // Image source for Personal Webpage
   }
