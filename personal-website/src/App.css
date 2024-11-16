@@ -52,6 +52,10 @@ body {
   border-radius: 5px;
 }
 
+
+
+
+
 .spacer {
   height: 100px; /* Maintain the height of each spacer */
   margin: 10px 0; /* Add space between spacers */
@@ -64,12 +68,31 @@ body {
   border: none; /* Remove the border */
 }
 
-.spacer-45 {
-  background-color: transparent; /* Ensure no background for spacer 45 */
-  color: transparent; /* Make any text invisible */
+.spacer-44 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Ensure speech bubble is tied to this spacer */
+  height: 80px; /* Adjust height if needed for better alignment */
+}
+
+.spacer-44 .speech-bubble {
+  position: absolute; /* Position relative to spacer 44 */
+  top: 0; /* Align within spacer 44 */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the speech bubble */
+  color: #000; /* Text color */
+  padding: 10px 15px; /* Space inside the bubble */
+  border-radius: 10px; /* Rounded edges */
+  font-size: 14px; /* Text size */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.spacer-45 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Maintain the height */
 }
 
 .spacer-45 img {
@@ -77,6 +100,7 @@ body {
   width: 200px; /* Adjust the size of the astronaut image */
   height: auto;
 }
+
 
 
 
@@ -958,4 +982,35 @@ html {
   100% {
     transform: translateY(0); /* Return to start */
   }
+}
+
+
+.astronaut-container {
+  position: fixed;
+  bottom: 50px; /* Position above the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.astronaut-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.astronaut-image {
+  width: 150px; /* Adjust image size */
+}
+
+.speech-bubble {
+  position: relative; /* Position relative to the astronaut-container */
+  margin-top: 10px; /* Add space above the astronaut */
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  white-space: nowrap; /* Prevent wrapping of text */
 }

@@ -95,16 +95,19 @@ function App() {
             {spacers.map((_, index) => (
               <div
                 key={index}
-                className={`spacer ${index === 45 ? 'spacer-45' : ''}`}
+                className={`spacer ${index === 44 ? 'spacer-44' : index === 45 ? 'spacer-45' : ''}`}
               >
-                {index === 45 ? (
+                {index === 44 && (
+                  <div className="speech-bubble">
+                    Thank you for visiting my website! 
+                  </div>
+                )}
+                {index === 45 && (
                   <img
                     src={astronautImage}
                     alt="Astronaut"
                     className="astronaut-image"
                   />
-                ) : (
-                  '' // Remove text and make other spacers empty
                 )}
               </div>
             ))}
