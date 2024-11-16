@@ -2,7 +2,7 @@
 body {
   background-color: #040416;
   font-family: 'Press Start 2P', monospace;
-  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-y: scroll; /* Allow vertical scrolling */
   
 }
 
