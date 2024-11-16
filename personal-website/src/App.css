@@ -907,7 +907,8 @@ html {
 
 
 
-/* Centering the astronaut in the middle of the page */
+
+
 .astronaut-container {
   position: fixed;
   top: 50%; /* Center vertically */
@@ -916,13 +917,14 @@ html {
   z-index: 1000; /* Place on top of other elements */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+  pointer-events: none; /* Ignore pointer events */
 }
 
 .astronaut-container.visible {
   opacity: 1; /* Make visible when the class is toggled */
+  pointer-events: auto; /* Allow interactions only when visible */
 }
 
-/* Floating wrapper for animation */
 .astronaut-wrapper {
   animation: floating 3s infinite ease-in-out; /* Add floating animation */
 }
@@ -932,7 +934,6 @@ html {
   height: auto;
 }
 
-/* Floating animation */
 @keyframes floating {
   0% {
     transform: translateY(0); /* Start at initial position */

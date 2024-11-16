@@ -14,6 +14,7 @@ function App() {
   const [showAstronaut, setShowAstronaut] = useState(false);
   const scrollContainerRef = useRef();
   const spacerLimitReached = useRef(false);
+  const isAtBottom = useRef(false); // Track if the user is at the bottom
   const fullName = "Janred Salubayba";
   const typingSpeed = 150;
   const maxSpacers = 50;
@@ -93,21 +94,36 @@ function App() {
     };
   }, [spacers]);
 
-  // Scroll-based fallback to ensure smooth scrolling
+  // Throttle-based scroll handler for smoother performance
   useEffect(() => {
+    let scrollThrottleTimeout = null;
+
     const handleScroll = () => {
-      const scrollContainer = scrollContainerRef.current;
-      if (scrollContainer) {
-        const isAtBottom =
-          scrollContainer.scrollHeight - scrollContainer.scrollTop <=
-          scrollContainer.clientHeight + 5; // Small buffer for smoothness
-        if (isAtBottom && spacers.length < maxSpacers && !spacerLimitReached.current) {
-          setSpacers((prevSpacers) => [
-            ...prevSpacers,
-            ...Array.from({ length: 10 }),
-          ]);
+      if (scrollThrottleTimeout) return;
+
+      scrollThrottleTimeout = setTimeout(() => {
+        const scrollContainer = scrollContainerRef.current;
+        if (scrollContainer) {
+          const isUserAtBottom =
+            scrollContainer.scrollHeight - scrollContainer.scrollTop <=
+            scrollContainer.clientHeight + 5; // Buffer for smoothness
+
+          isAtBottom.current = isUserAtBottom;
+
+          if (
+            isUserAtBottom &&
+            spacers.length < maxSpacers &&
+            !spacerLimitReached.current
+          ) {
+            setSpacers((prevSpacers) => [
+              ...prevSpacers,
+              ...Array.from({ length: 10 }),
+            ]);
+          }
         }
-      }
+
+        scrollThrottleTimeout = null; // Reset throttle
+      }, 100); // Throttle interval (100ms)
     };
 
     const scrollContainer = scrollContainerRef.current;
@@ -119,24 +135,23 @@ function App() {
       if (scrollContainer) {
         scrollContainer.removeEventListener('scroll', handleScroll);
       }
+      if (scrollThrottleTimeout) {
+        clearTimeout(scrollThrottleTimeout);
+      }
     };
   }, [spacers]);
 
-  // Handle tab switching or refresh
+  // Debugging and tab switching
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
+        console.log('Tab is active. Rechecking scroll position...');
         const scrollContainer = scrollContainerRef.current;
-        if (scrollContainer) {
-          const isAtBottom =
-            scrollContainer.scrollHeight - scrollContainer.scrollTop <=
-            scrollContainer.clientHeight + 5;
-          if (isAtBottom) {
-            setSpacers((prevSpacers) => [
-              ...prevSpacers,
-              ...Array.from({ length: 10 }),
-            ]);
-          }
+        if (scrollContainer && isAtBottom.current) {
+          setSpacers((prevSpacers) => [
+            ...prevSpacers,
+            ...Array.from({ length: 10 }),
+          ]);
         }
       }
     };
