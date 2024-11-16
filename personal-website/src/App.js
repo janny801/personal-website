@@ -122,6 +122,32 @@ function App() {
     };
   }, [spacers]);
 
+  // Handle tab switching or refresh
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        const scrollContainer = scrollContainerRef.current;
+        if (scrollContainer) {
+          const isAtBottom =
+            scrollContainer.scrollHeight - scrollContainer.scrollTop <=
+            scrollContainer.clientHeight + 5;
+          if (isAtBottom) {
+            setSpacers((prevSpacers) => [
+              ...prevSpacers,
+              ...Array.from({ length: 10 }),
+            ]);
+          }
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -152,11 +178,13 @@ function App() {
         {/* Conditional rendering for astronaut */}
         {showAstronaut && (
           <div className="astronaut-container visible">
-            <img
-              src={astronautImage}
-              alt="Astronaut sending a message"
-              className="astronaut-image"
-            />
+            <div className="astronaut-wrapper">
+              <img
+                src={astronautImage}
+                alt="Astronaut sending a message"
+                className="astronaut-image"
+              />
+            </div>
           </div>
         )}
       </div>

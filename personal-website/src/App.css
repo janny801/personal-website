@@ -907,7 +907,6 @@ html {
 
 
 
-
 /* Centering the astronaut in the middle of the page */
 .astronaut-container {
   position: fixed;
@@ -919,11 +918,29 @@ html {
   transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
 }
 
+.astronaut-container.visible {
+  opacity: 1; /* Make visible when the class is toggled */
+}
+
+/* Floating wrapper for animation */
+.astronaut-wrapper {
+  animation: floating 3s infinite ease-in-out; /* Add floating animation */
+}
+
 .astronaut-container img {
   width: 200px; /* Adjust the image size */
   height: auto;
 }
 
-.astronaut-container.visible {
-  opacity: 1; /* Make visible when the class is toggled */
+/* Floating animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0); /* Start at initial position */
+  }
+  50% {
+    transform: translateY(-20px); /* Float upward */
+  }
+  100% {
+    transform: translateY(0); /* Return to initial position */
+  }
 }
