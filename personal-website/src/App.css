@@ -444,13 +444,16 @@ nav a.active {
   transform: rotate(270deg); /* Rotate the flame to face left horizontally */
 }
 
-/* Animation for Rocket Flying Off */
+/* Animation for Rocket Flying Off and Fading */
 @keyframes rocketFly {
   0% {
     left: -100px; /* Start off-screen */
+    opacity: 1; /* Fully visible */
   }
   100% {
-    left: 120vw; /* Move the rocket completely off the screen */
+    left: 200vw; /* Move the rocket completely off the screen */
+    opacity: 0; /* Fully transparent */
+    visibility: hidden; /* Hide it completely from layout */
   }
 }
 
@@ -463,7 +466,6 @@ nav a.active {
     transform: scaleY(0.8);
   }
 }
-
 
 /* General container for the "About Me" section */
 .aboutme-container {
@@ -713,27 +715,23 @@ nav a.active {
   transform: rotate(270deg); /* Rotate the flame to face left horizontally */
 }
 
-/* Animation for Rocket Flying Off */
+
+
+/* Animation for Rocket Flying Off and Fading */
 @keyframes rocketFly {
   0% {
     left: -100px; /* Start off-screen */
+    opacity: 1; /* Fully visible */
+  }
+  90% {
+    left: 200vw; /* Move rocket completely off-screen */
+    opacity: 1; /* Still fully visible while flying */
   }
   100% {
-    left: 120vw; /* Move the rocket completely off the screen */
+    left: 200vw; /* Remain off-screen */
+    opacity: 0; /* Fully transparent */
   }
 }
-
-/* Flame Flicker */
-@keyframes flameFlicker {
-  0% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(0.8);
-  }
-}
-
-
 
 
 /* Contact container styling */
