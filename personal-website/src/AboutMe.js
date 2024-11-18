@@ -7,7 +7,7 @@ function AboutMe() {
       <h2 className="aboutme-heading">About Me</h2>
       <div className="about-me-text">
         <p>
-          I'm a passionate computer science student at the University of Houston with a deep interest in technology and innovation.
+          I'm a passionate computer science student at the University of Houston with interests in technology, and fitness. 
         </p>
         <p>
           My experience spans roles like developing databases for NASA and creating interactive applications, from AI-driven chatbots to real-time web platforms.
