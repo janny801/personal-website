@@ -776,6 +776,30 @@ nav a.active {
   padding: 20px 20px 50px; /* Consistent padding: top, sides, bottom */
 }
 
+
+@media (max-width: 768px) {
+  .contact-container,
+  .aboutme-container,
+  .projects-container {
+      max-width: 100%; /* Full width for smaller screens */
+  }
+
+  nav {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center-align for better appearance */
+  }
+
+  nav a {
+      margin: 10px 0; /* Add spacing between links */
+  }
+}
+
+
+
+
+
+
 .about-me-text p {
   white-space: pre-wrap;
   overflow: hidden; 
