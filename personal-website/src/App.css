@@ -1085,3 +1085,86 @@ html {
   display: block; /* Ensure the image doesn't interfere with inline elements */
   margin: 0 auto; /* Center the image while leaving room for arrows */
 }
+
+
+
+/* Resume Button */
+.resume-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resume-button:hover {
+  background-color: #45a049;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  background: white; /* Ensure a clean white background */
+  padding: 0;
+  width: 75vw; /* 75% of viewport width */
+  height: 90vh; /* 90% of viewport height */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-content object {
+  width: 100%; /* Full width of the modal */
+  height: 100%; /* Full height of the modal */
+  border: none; /* Remove any borders around the PDF */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dimmed background for focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-button:hover {
+  background-color: #d32f2f;
+}
