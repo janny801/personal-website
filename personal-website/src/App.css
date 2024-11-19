@@ -806,7 +806,7 @@ nav a.active {
 
   font-size:16px;
   line-height: 2; /* Increases line spacing */
-  margin-bottom: 15px; /* Adds spacing between paragraphs */
+  margin-bottom: 50px; /* Adds spacing between paragraphs */
 
 }
 
@@ -1072,4 +1072,16 @@ html {
     width: 100px; /* Reduce the astronaut size for smaller screens */
     height: auto; /* Maintain aspect ratio */
   }
+}
+
+
+
+
+.aboutme-image img {
+  max-width:  70%; /* Slightly reduce the image width to leave space for arrows */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block; /* Ensure the image doesn't interfere with inline elements */
+  margin: 0 auto; /* Center the image while leaving room for arrows */
 }
