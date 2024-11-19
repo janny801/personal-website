@@ -1156,22 +1156,19 @@ html {
 }
 
 
+
+
+
+
 /* Responsive Styles for Smaller Screens */
 @media (max-width: 768px) {
   .modal-content {
-    width: 90vw; /* Increase width for smaller screens */
-    height: 80vh; /* Slightly reduce height */
-  }
-
-  iframe {
-    width: 100%; /* Full width for small screens */
-    height: auto; /* Adjust height based on content */
-    max-height: 70vh; /* Ensure it doesn’t exceed the viewport */
+    width: 90vw; /* Adjust width for smaller screens */
+    height: 70vh;
   }
 
   .close-button {
-    margin-top: 10px;
-    padding: 8px 16px; /* Reduce padding for smaller buttons */
-    font-size: 14px; /* Slightly smaller font size */
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
