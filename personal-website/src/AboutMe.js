@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import selfImage1 from './proj-images/selfimage1.jpeg';
 import selfImage2 from './proj-images/selfimage2.png';
 import selfImage3 from './proj-images/selfimage3.png';
+import resumePDF from './proj-images/janredres.pdf';
 import './App.css';
 
 function AboutMe() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const images = [selfImage1, selfImage2, selfImage3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -16,6 +18,14 @@ function AboutMe() {
     setCurrentImageIndex((prevIndex) =>
       (prevIndex - 1 + images.length) % images.length
     );
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -41,7 +51,7 @@ function AboutMe() {
         </p>
       </div>
 
-      {/* Slideshow container (now below the text) */}
+      {/* Slideshow container */}
       <div className="slideshow">
         <div className="aboutme-image">
           <img
@@ -58,6 +68,28 @@ function AboutMe() {
           </span>
         </div>
       </div>
+
+      {/* Resume Button */}
+      <button className="resume-button" onClick={openModal}>
+        View My Resume
+      </button>
+
+      {/* Modal for Resume */}
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+  <iframe
+    src={resumePDF}
+    title="Janred Salubayba Resume"
+    style={{ width: '100%', height: '100%', border: 'none' }}
+  />
+  <button className="close-button" onClick={closeModal}>
+    Close
+  </button>
+</div>
+
+        </div>
+      )}
     </div>
   );
 }
