@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://janny801.github.io/personal-website",
+  "homepage": "https://janny801.github.io/personal-website/",
   "eslintConfig": {
     "extends": [
       "react-app",
