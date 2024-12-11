@@ -23,6 +23,30 @@ body {
 }
 
 
+.homepage-link {
+  text-decoration: none; /* No underline */
+  color: white; /* Or the exact color you used before */
+  font-family: "Orbitron", sans-serif; /* Use your font here */
+  font-size: 3rem; /* Adjust to match your original size */
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2); /* If you had a glow effect */
+}
+
+.homepage-link:visited {
+  color: white; /* Keep consistent */
+}
+
+.homepage-link:active {
+  color: white; /* Keep consistent */
+}
+
+.homepage-link:hover {
+  text-decoration: underline; /* Optional */
+}
+
+
+
 /* Main App Styling */
 .App {
   position: relative;

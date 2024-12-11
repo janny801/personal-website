@@ -73,13 +73,16 @@ function App() {
   }, [spacers]);
 
   return (
-    <Router>
+    <Router basename="/personal-website">
       <div className="App">
         <StarryBackground scrollContainerRef={scrollContainerRef} />
         <div className="content" ref={scrollContainerRef}>
+          {/* Make the name clickable */}
           <h1>
-            {displayedText}
-            <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
+            <Link to="/" className="homepage-link">
+              {displayedText}
+              <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
+            </Link>
           </h1>
           <nav>
             <Link to="/projects">Projects</Link>
@@ -87,32 +90,35 @@ function App() {
             <Link to="/contact">Contact Me</Link>
           </nav>
           <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="empty-homepage">
+                  {/* This renders the blank homepage */}
+                </div>
+              }
+            />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/contact" element={<ContactMe />} />
           </Routes>
           <div className="infinite-scroll-container">
-          {spacers.map((_, index) => (
-  <div
-    key={index}
-    className={`spacer ${index === 44 ? 'spacer-44' : index === 45 ? 'spacer-45' : ''}`}
-  >
-    {index === 44 && (
-      <div className="speech-bubble">
-        Thank you for visiting my website!
-        <div className="speech-bubble-tail"></div>
-      </div>
-    )}
-    {index === 45 && (
-      <img
-        src={astronautImage}
-        alt="Astronaut"
-        className="astronaut-image"
-      />
-    )}
-  </div>
-))}
-
+            {spacers.map((_, index) => (
+              <div
+                key={index}
+                className={`spacer ${index === 44 ? 'spacer-44' : index === 45 ? 'spacer-45' : ''}`}
+              >
+                {index === 44 && (
+                  <div className="speech-bubble">
+                    Thank you for visiting my website!
+                    <div className="speech-bubble-tail"></div>
+                  </div>
+                )}
+                {index === 45 && (
+                  <img src={astronautImage} alt="Astronaut" className="astronaut-image" />
+                )}
+              </div>
+            ))}
             <div className="infinite-scroll-end"></div>
           </div>
         </div>
