@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/personal-website/static/css/main.09a4af7c.css",
+    "main.js": "/personal-website/static/js/main.152277ac.js",
+    "static/js/453.253ccfac.chunk.js": "/personal-website/static/js/453.253ccfac.chunk.js",
+    "static/media/aichatappandpdfsummarizer.png": "/personal-website/static/media/aichatappandpdfsummarizer.6d261a5c49fa6efadb2e.png",
+    "static/media/selfimage2.png": "/personal-website/static/media/selfimage2.6f4c45d04ba47997042c.png",
+    "static/media/selfimage3.png": "/personal-website/static/media/selfimage3.a60b7e58a9043bde5ca7.png",
+    "static/media/spacegame.png": "/personal-website/static/media/spacegame.d53a166f1bb5b376e6fe.png",
+    "static/media/realtimechatapp.png": "/personal-website/static/media/realtimechatapp.b3a1c1de342435d3798d.png",
+    "static/media/personalwebpage.png": "/personal-website/static/media/personalwebpage.f171d74b6f3e5b3c052b.png",
+    "static/media/selfimage1.jpeg": "/personal-website/static/media/selfimage1.f22134188bac800ce11d.jpeg",
+    "static/media/janredres.pdf": "/personal-website/static/media/janredres.a841f210b2b9669c06ae.pdf",
+    "static/media/astronautflying.webp": "/personal-website/static/media/astronautflying.1a2c9353c01830c5f274.webp",
+    "index.html": "/personal-website/index.html",
+    "main.09a4af7c.css.map": "/personal-website/static/css/main.09a4af7c.css.map",
+    "main.152277ac.js.map": "/personal-website/static/js/main.152277ac.js.map",
+    "453.253ccfac.chunk.js.map": "/personal-website/static/js/453.253ccfac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09a4af7c.css",
+    "static/js/main.152277ac.js"
+  ]
+}
