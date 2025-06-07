@@ -38,8 +38,9 @@ function AboutMe() {
     I'm a passionate computer science student at the University of Houston with interests in technology, and fitness.
   </p>
   <p>
-    My experience spans roles like developing databases for NASA and creating interactive applications, from AI-driven chatbots to real-time web platforms.
-  </p>
+  My experience includes working as a database development and management intern at NASA as well as personal projects ranging from AI-driven apps to Windows scripting tools.
+</p>
+
   <p>
     I am also a member of the Society of Asian Scientists and Engineers (SASE) at the University of Houston where I'm focusing on enhancing my soft skills and career preparation.
   </p>
