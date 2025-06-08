@@ -112,19 +112,19 @@ function Projects() {
       {/* Slideshow container */}
       <div className="slideshow">
         <div className="project-image">
-          {currentProject.id === 5 ? (
-            <iframe
-              src={currentProject.link}
-              width="100%"
-              height="400px"
-              style={{ border: 'none' }}
-              title="CoogMusic"
-            ></iframe>
-          ) : currentProject.image ? (
-            <img src={currentProject.image} alt={currentProject.name} />
-          ) : (
-            <p>Placeholder image for project {currentProject.id}</p>
-          )}
+        {currentProject.id === 5 ? (
+  <div className="iframe-wrapper">
+    <iframe
+      src={currentProject.link}
+      title="CoogMusic"
+      allowFullScreen
+      frameBorder="0"
+    ></iframe>
+  </div>
+) : (
+  <img src={currentProject.image} alt={currentProject.name} />
+)}
+
         </div>
   
         {/* Arrow container for bottom positioning on mobile */}
