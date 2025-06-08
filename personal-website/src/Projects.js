@@ -77,7 +77,18 @@ Overall, this project allowed me to expand my front-end development skills and g
 I also used it as an opportunity to learn React.js, which is something that I had wanted to learn for a while in my aspirations to become a flexible full-stack developer.`,
     link: 'https://github.com/janny801/personal-webpage',
     image: personalWebpageImage, // Image source for Personal Webpage
+  }, 
+
+  //new for coog music proj 
+  {
+    id: 5,
+    name: 'CoogMusic',
+    learnings: `Placeholder for learnings.`,
+    experience: `Placeholder for experience.`,
+    link: 'https://coogmusic.com/',
+    image: null // Leave as null or undefined, and handle with iframe when rendering
   }
+  
 ];
 
 function Projects() {
@@ -101,7 +112,15 @@ function Projects() {
       {/* Slideshow container */}
       <div className="slideshow">
         <div className="project-image">
-          {currentProject.image ? (
+          {currentProject.id === 5 ? (
+            <iframe
+              src={currentProject.link}
+              width="100%"
+              height="400px"
+              style={{ border: 'none' }}
+              title="CoogMusic"
+            ></iframe>
+          ) : currentProject.image ? (
             <img src={currentProject.image} alt={currentProject.name} />
           ) : (
             <p>Placeholder image for project {currentProject.id}</p>
@@ -131,15 +150,15 @@ function Projects() {
         </div>
   
         <div className="project-link-section">
-
           <h3>Check Out This Project Further</h3>
           <a href={currentProject.link} target="_blank" rel="noopener noreferrer">
-            {currentProject.name} on GitHub
+            Visit {currentProject.name}
           </a>
         </div>
       </div>
-</div>
+    </div>
   );
+  
 }
 
 export default Projects;
