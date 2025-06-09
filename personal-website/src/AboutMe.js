@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+
 import React, { useState } from 'react';
 import selfImage1 from './proj-images/selfimage1.jpeg';
 import selfImage2 from './proj-images/selfimage2.png';
