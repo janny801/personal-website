@@ -83,7 +83,11 @@ I also used it as an opportunity to learn React.js, which is something that I ha
   {
     id: 5,
     name: 'CoogMusic',
-    learnings: `Placeholder for learnings.`,
+    learnings: `Most of my previous project and work experience in the field was done independently, so this was a valuable opportunity to work on a collaborative project. 
+
+    I learned how to split up tasks efficiently while accommodating everyone's busy schedules, since this was created for a group project assignment in class. 
+
+    While I continued sharpening my technical skills, I felt that my biggest growth was in learning how to work as a team to meet deadlines — an experience that gave me practical, real-world development insight.`,
     experience: `Placeholder for experience.`,
     link: 'https://coogmusic.com/',
     image: null // Leave as null or undefined, and handle with iframe when rendering
