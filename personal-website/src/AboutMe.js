@@ -7,7 +7,7 @@ import './App.css';
 
 function AboutMe() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const images = [selfImage1, selfImage2, selfImage3];
+  const images = [ selfImage2, selfImage3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
