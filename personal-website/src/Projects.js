@@ -108,7 +108,9 @@ I also contributed to writing backend endpoints that communicated with the front
 learnings: `I learned how to use AHK scripting to solve certain problems. Despite being a simple project, it allowed me to learn how to get hardware user input and translate it to a desired output. 
 
 I also learned how to keep track of what is on the screen and enable the script only during specific times (when the OneNote app is open on Windows).`,
-  experience: 'Placeholder for experience description.',
+experience: `I usually use the OneNote app on macOS, which allows for these features, but I was not able to do so on the Windows version of the OneNote desktop app. 
+
+This is one of the things I love about programming — it allows me to solve simple problems, customize things, and fix issues I encounter.`,
   link: 'https://github.com/janny801/onenote-navigation-ahk-fix',
 
   image: onenoteFixAHK,
