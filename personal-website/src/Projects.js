@@ -95,7 +95,16 @@ I was mainly in charge of the backend side of the project, including communicati
 I also contributed to writing backend endpoints that communicated with the frontend, allowing users to send and receive the data they needed to interact with the platform.`,
     link: 'https://coogmusic.com/',
     image: null // Leave as null or undefined, and handle with iframe when rendering
-  }
+  }, 
+
+  {
+  id: 6,
+  name: 'OneNote Navigation Fix',
+  learnings: 'Placeholder for learnings description.',
+  experience: 'Placeholder for experience description.',
+  link: 'https://github.com/janny801/onenote-navigation-ahk-fix',
+  image: null // No image provided
+}
   
 ];
 
