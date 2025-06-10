@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+
 import React, { useState } from 'react';
 import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 import realTimeChatImage from './proj-images/realtimechatapp.png';
