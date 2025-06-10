@@ -108,7 +108,8 @@ I also contributed to writing backend endpoints that communicated with the front
   learnings: 'Placeholder for learnings description.',
   experience: 'Placeholder for experience description.',
   link: 'https://github.com/janny801/onenote-navigation-ahk-fix',
-  image: null // No image provided
+
+  image: onenoteFixAHK,
 }
   
 ];
