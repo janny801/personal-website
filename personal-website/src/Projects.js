@@ -121,8 +121,12 @@ This is one of the things I love about programming — it allows me to solve sim
 {
   id: 7,
   name: 'Custom Folder Icon Tool for Windows 11',
-  learnings: `Placeholder for what you learned from building this project.`,
-  experience: `Placeholder for your experience building the project.`,
+learnings: `This project helped me understand how batch scripting works on Windows and how to use system commands to manipulate folder attributes and UI behavior.
+
+It also gave me a better understanding of how Windows handles folder metadata and icon caching.`,
+experience: `I wanted to have custom folder icons to make it easier to tell which folder is which at a glance.
+
+I tried downloading other apps to achieve this, but none of them worked reliably. So I decided to make my own solution, which is one of the main things that intrigues me about software development — being able to solve personal problems with custom tools.`,
   link: 'https://github.com/janny801/custom-folder-icons-windows',
   image: customFolderIconImage
 }
