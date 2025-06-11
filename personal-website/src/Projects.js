@@ -7,6 +7,8 @@ import realTimeChatImage from './proj-images/realtimechatapp.png';
 import spaceGameImage from './proj-images/spacegame.png';
 import personalWebpageImage from './proj-images/personalwebpage.png'; // Import the new image
 import onenoteFixAHK from './proj-images/onenoteFixAHK.gif'; // Import the OneNote Navigation Fix GIF
+import customFolderIconImage from './proj-images/customFolderIcon.png';
+
 
 import './App.css';
 
@@ -114,7 +116,17 @@ This is one of the things I love about programming — it allows me to solve sim
   link: 'https://github.com/janny801/onenote-navigation-ahk-fix',
 
   image: onenoteFixAHK,
+}, 
+
+{
+  id: 7,
+  name: 'Custom Folder Icon Tool for Windows 11',
+  learnings: `Placeholder for what you learned from building this project.`,
+  experience: `Placeholder for your experience building the project.`,
+  link: 'https://github.com/janny801/custom-folder-icons-windows',
+  image: customFolderIconImage
 }
+
   
 ];
 
