@@ -177,6 +177,17 @@ function Projects() {
         </div>
       </div>
       
+
+      <div className="dot-indicator">
+  {projectData.map((_, index) => (
+    <span
+      key={index}
+      className={`dot ${index === currentProjectIndex ? 'active' : ''}`}
+    ></span>
+  ))}
+</div>
+
+
       {/* Project name below the image */}
       <h3 className="project-title">{currentProject.name}</h3>
   
