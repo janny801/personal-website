@@ -1219,19 +1219,19 @@ html {
 .dot-indicator {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .dot {
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active {
-  background-color: #333;
+  background-color: #61dafb;
 }
