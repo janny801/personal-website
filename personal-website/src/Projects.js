@@ -106,7 +106,7 @@ I also contributed to writing backend endpoints that communicated with the front
 
   {
   id: 6,
-  name: 'OneNote Navigation Fix',
+  name: 'OneNote Navigation Fix (AHK)',
 learnings: `I learned how to use AHK scripting to solve certain problems. Despite being a simple project, it allowed me to learn how to get hardware user input and translate it to a desired output. 
 
 I also learned how to keep track of what is on the screen and enable the script only during specific times (when the OneNote app is open on Windows).`,
