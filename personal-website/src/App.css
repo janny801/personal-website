@@ -1223,9 +1223,9 @@ html {
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
+  height: 16px; /* Increased from 10px */
+  width: 16px;  /* Increased from 10px */
+  margin: 0 6px; /* Optional: slightly more spacing */
   background-color: white;
   border-radius: 50%;
   display: inline-block;
