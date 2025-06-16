@@ -13,3 +13,8 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 - **Frontend**: React.js, HTML, CSS  
 - **Design & Styling**: Custom animations, responsive UI  
 
+### Start Locally  
+```bash
+npm install      # Install all dependencies
+npm start        # Runs the app in development mode at http://localhost:3000/
+```
