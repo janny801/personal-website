@@ -18,3 +18,11 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 npm install      # Install all dependencies
 npm start        # Runs the app in development mode at http://localhost:3000/
 ```
+
+### Deploy to GitHub Pages  
+```bash
+npm run deploy
+
+- This command automatically runs `npm run build` to create a production-ready build of the app.  
+- Then it pushes the build output to the `gh-pages` branch for GitHub Pages deployment.  
+- Make sure the `homepage` field in your `package.json` is correctly set (e.g., `"homepage": "https://your-username.github.io/your-repo-name"`).  
