@@ -22,6 +22,7 @@ npm start        # Runs the app in development mode at http://localhost:3000/
 ### Deploy to GitHub Pages  
 ```bash
 npm run deploy
+```
 
 - This command automatically runs `npm run build` to create a production-ready build of the app.  
 - Then it pushes the build output to the `gh-pages` branch for GitHub Pages deployment.  
