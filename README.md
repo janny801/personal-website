@@ -7,7 +7,9 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 - **About Me Section**: Highlights my background, experience, and skills.  
 - **Contact Section**: Allows visitors to reach out via email, LinkedIn, or GitHub.  
 - **Animations & Interactive UI**: Enhances user experience with smooth transitions.  
-- **Mobile Responsive Design**: Optimized for various screen sizes.  
+- **Mobile Responsive Design**: Optimized for various screen sizes.
+
+## 🧪 Local Development & Deployment
 
 ### Start Locally  
 ```bash
