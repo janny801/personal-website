@@ -24,7 +24,8 @@ npm run deploy
 
 - This command automatically runs `npm run build` to create a production-ready build of the app.  
 - Then it pushes the build output to the `gh-pages` branch for GitHub Pages deployment.  
-- Make sure the `homepage` field in your `package.json` is correctly set (e.g., `"homepage": "https://your-username.github.io/your-repo-name"`).  
+- Make sure the `homepage` field in your `package.json` is correctly set:  
+  - Example: `"homepage": "https://janny801.github.io/personal-website"`
 
 ## 🛠️ Technologies Used  
 - **Frontend**: React.js, HTML, CSS  
