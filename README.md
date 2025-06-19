@@ -6,7 +6,12 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 [View the live website](https://janny801.github.io/personal-website)
 
 ## 🚀 Features  
-- **Project Showcase**: Displays my featured and other projects with descriptions and GitHub links.  
+
+- **Project Showcase**  
+  - ![Projects Page](imgs/projectspage.png)  
+  - A slideshow containing images of some projects I’ve worked on.  
+  - Includes what I learned, my experience building each project, and links to GitHub or the live website (if hosted).
+
 - **About Me Section**: Highlights my background, experience, and skills.  
 - **Contact Section**: Allows visitors to reach out via email, LinkedIn, or GitHub.  
 - **Animations & Interactive UI**: Enhances user experience with smooth transitions.  
