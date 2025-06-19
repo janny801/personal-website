@@ -12,7 +12,11 @@ A responsive portfolio website built using **React.js** to showcase my projects,
   - A slideshow containing images of some projects I’ve worked on.  
   - Includes what I learned, my experience building each project, and links to GitHub or the live website (if hosted).
 
-- **About Me Section**: Highlights my background, experience, and skills.  
+- **About Me Section**  
+  - ![About Me Page](imgs/aboutmepage.png)  
+  - Tells a little bit about myself and includes photos.  
+  - Includes a link to view my resume.
+
 - **Contact Section**: Allows visitors to reach out via email, LinkedIn, or GitHub.  
 - **Animations & Interactive UI**: Enhances user experience with smooth transitions.  
 - **Mobile Responsive Design**: Optimized for various screen sizes.
