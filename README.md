@@ -19,7 +19,8 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 
 - **Contact Section**  
   - ![Contact Me Page](imgs/contactmepage.png)  
-  - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form to send me a message directly.
+  - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
+
 
 - **Animations & Interactive UI**: Enhances user experience with smooth transitions.  
 - **Mobile Responsive Design**: Optimized for various screen sizes.
