@@ -14,14 +14,22 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 - A slideshow containing images of some projects I’ve worked on.  
 - Includes what I learned, my experience building each project, and links to GitHub or the live website (if hosted).
 
-- **About Me Section**  
-  - ![About Me Page](imgs/aboutmepage.png)  
-  - Tells a little bit about myself and includes photos.  
-  - Includes a link to view my resume.
+## **About Me Section**  
 
-- **Contact Section**  
-  - ![Contact Me Page](imgs/contactmepage.png)  
-  - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
+<p align="center">
+  <img src="imgs/aboutmepage.png" alt="About Me Page">
+</p>  
+
+- Tells a little bit about myself and includes photos.  
+- Includes a link to view my resume.
+
+## **Contact Section**  
+
+<p align="center">
+  <img src="imgs/contactmepage.png" alt="Contact Me Page">
+</p>  
+
+- Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
 
 
 - **Animations & Interactive UI**: Enhances user experience with smooth transitions.  
