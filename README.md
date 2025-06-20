@@ -7,6 +7,8 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 
 ## 🚀 Features  
 
+**Project Showcase**  
+
 <p align="center">
   <img src="imgs/projectspage.png" alt="Projects Page">
 </p>  
@@ -14,7 +16,7 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 - A slideshow containing images of some projects I’ve worked on.  
 - Includes what I learned, my experience building each project, and links to GitHub or the live website (if hosted).
 
-## **About Me Section**  
+**About Me Section**  
 
 <p align="center">
   <img src="imgs/aboutmepage.png" alt="About Me Page">
@@ -23,7 +25,7 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 - Tells a little bit about myself and includes photos.  
 - Includes a link to view my resume.
 
-## **Contact Section**  
+**Contact Section**  
 
 <p align="center">
   <img src="imgs/contactmepage.png" alt="Contact Me Page">
