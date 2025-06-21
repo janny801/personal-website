@@ -7,7 +7,7 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 
 ## 🖼️ Website Preview  
 
-<div align="center"><strong>📸 Project Showcase</strong></div>  
+<div align="center"><h3><u>📸 Project Showcase</u></h3></div>
 
 <p align="center">
   <img src="imgs/projectspage.png" alt="Projects Page">
