@@ -5,7 +5,6 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 **🔗 Deployed Website**  
 [View the live website](https://janny801.github.io/personal-website)
 
-
 ## 🖼️ Website Preview  
 
 <div align="center"><h3><u>📸 Project Showcase</u></h3></div>
