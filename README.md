@@ -5,10 +5,6 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 **🔗 Deployed Website**  
 [View the live website](https://janny801.github.io/personal-website)
 
-## 🛠️ Technologies Used  
-- **Frontend**: React.js, HTML, CSS  
-- **Design & Styling**: Custom animations, responsive UI  
-
 ## 🧪 Local Development & Deployment
 
 ### Start Locally  
@@ -55,3 +51,6 @@ npm run deploy
 
 - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
 
+## 🛠️ Technologies Used  
+- **Frontend**: React.js, HTML, CSS  
+- **Design & Styling**: Custom animations, responsive UI  
