@@ -5,6 +5,9 @@ A responsive portfolio website built using **React.js** to showcase my projects,
 **🔗 Deployed Website**  
 [View the live website](https://janny801.github.io/personal-website)
 
+## 🛠️ Technologies Used  
+- **Frontend**: React.js, HTML, CSS  
+- **Design & Styling**: Custom animations, responsive UI  
 
 ## 🧪 Local Development & Deployment
 
@@ -23,10 +26,6 @@ npm run deploy
 - Then it pushes the build output to the `gh-pages` branch for GitHub Pages deployment.  
 - Make sure the `homepage` field in your `package.json` is correctly set:  
   - Example: `"homepage": "https://janny801.github.io/personal-website"`
-
-## 🛠️ Technologies Used  
-- **Frontend**: React.js, HTML, CSS  
-- **Design & Styling**: Custom animations, responsive UI  
 
 ## 🖼️ Website Preview  
 
