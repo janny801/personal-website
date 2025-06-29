@@ -52,5 +52,9 @@ npm run deploy
 - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
 
 ## 🛠️ Technologies Used  
+
 - **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3  
-- **Design & Styling**: Custom animations, responsive UI  
+- **Design & Styling:** Custom animations, responsive UI, media queries, keyframe animations  
+- **Form Handling:** EmailJS (sends messages directly to my personal email: jred8069@gmail.com)  
+- **Build Tools:** npm, Create React App  
+- **Deployment:** GitHub Pages  
