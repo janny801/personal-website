@@ -52,5 +52,5 @@ npm run deploy
 - Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
 
 ## 🛠️ Technologies Used  
-- **Frontend**: React.js, HTML, CSS  
+- **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3  
 - **Design & Styling**: Custom animations, responsive UI  
