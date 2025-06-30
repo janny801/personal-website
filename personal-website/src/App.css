@@ -858,22 +858,27 @@ nav a.active {
   color: white;
   padding: 10px;
   border-radius: 10px;
-  width: 100%;
-  aspect-ratio: 16 / 10;
 
-  max-width: 80%;
+  width: 100%;
+  max-width: 80vw; /* use vw for responsiveness */
   margin: 0 auto;
-  height: auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  aspect-ratio: 16 / 10;
+  height: auto; /* keep auto height */
 }
+
 
 .project-image img {
   width: 100%;
   height: auto;
+  max-height: 100%;
   object-fit: contain;
 }
+
 
 
 
