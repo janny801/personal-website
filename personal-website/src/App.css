@@ -899,21 +899,25 @@ nav a.active {
 }
 
 .left-arrow {
-  left: 10px;
+  left: -40px; /* pull arrow outside left edge */
 }
 
 .right-arrow {
-  right: 10px;
+  right: -40px; /* pull arrow outside right edge */
 }
 
-/* Optional responsiveness */
+/* Optional: scale arrows for small screens */
 @media (max-width: 768px) {
   .arrow {
     font-size: 5vw;
   }
+  .left-arrow {
+    left: -25px;
+  }
+  .right-arrow {
+    right: -25px;
+  }
 }
-
-
 /* Arrow Styling for the projects sec */
 
 
