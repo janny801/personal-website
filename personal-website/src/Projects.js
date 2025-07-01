@@ -155,26 +155,26 @@ function Projects() {
       {/* Slideshow container */}
       <div className="slideshow">
         <div className="project-image">
-        {currentProject.id === 5 ? (
-  <div className="iframe-wrapper">
-    <iframe
-      src={currentProject.link}
-      title="CoogMusic"
-      allowFullScreen
-      frameBorder="0"
-    ></iframe>
-  </div>
-) : (
-  <img src={currentProject.image} alt={currentProject.name} />
-)}
+          {currentProject.id === 5 ? (
+            <div className="iframe-wrapper">
+              <iframe
+                src={currentProject.link}
+                title="CoogMusic"
+                allowFullScreen
+                frameBorder="0"
+              ></iframe>
+            </div>
+          ) : (
+            <img src={currentProject.image} alt={currentProject.name} />
+          )}
 
-        </div>
-  
-        {/* Arrow container for bottom positioning on mobile */}
-        <div className="arrow-container">
+          {/* Arrows are now inside the project-image box for consistent placement */}
           <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
           <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
         </div>
+
+          
+
       </div>
       
 
