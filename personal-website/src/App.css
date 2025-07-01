@@ -871,6 +871,7 @@ nav a.active {
 
   aspect-ratio: 16 / 10;
   height: auto; /* keep auto height */
+  position: relative; /* reference container for arrows */ 
 }
 
 
@@ -887,24 +888,29 @@ nav a.active {
 
 /* Arrow Styling */
 .arrow {
-  font-size: 3vw; /* Reduced font size for smaller arrows */
+  position: absolute; /* Now relative to .project-image */
+  font-size: 2.5vw;
   color: #61dafb;
   cursor: pointer;
   user-select: none;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .left-arrow {
-  position: absolute;
-  left: 30px; /* Closer to the image */
-  top: 50%;
-  transform: translateY(-50%);
+  left: 10px;
 }
 
 .right-arrow {
-  position: absolute;
-  right: 30px; /* Closer to the image */
-  top: 50%;
-  transform: translateY(-50%);
+  right: 10px;
+}
+
+/* Optional responsiveness */
+@media (max-width: 768px) {
+  .arrow {
+    font-size: 5vw;
+  }
 }
 
 
