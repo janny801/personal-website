@@ -907,6 +907,13 @@ nav a.active {
   transform: translateY(-50%);
 }
 
+
+/* Arrow Styling for the projects sec */
+
+
+
+
+
 /* Responsive Styles for Smaller Screens */
 @media (max-width: 768px) {
   .slideshow {
