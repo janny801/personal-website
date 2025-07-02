@@ -899,31 +899,44 @@ nav a.active {
   transition: transform 0.2s ease;
 }
 
-/* Anchor to edge of image, then shift out by fixed relative distance */
 .left-arrow {
   left: 0;
-  transform: translate(-150%, -50%); /* push left of image */
+  transform: translate(-150%, -50%);
 }
 
 .right-arrow {
   right: 0;
-  transform: translate(150%, -50%); /* push right of image */
+  transform: translate(150%, -50%);
 }
 
-/* Responsive font size for small screens */
+/* Mobile view: move arrows below the image */
 @media (max-width: 768px) {
+  .project-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: static; /* remove relative positioning to avoid absolute issues */
+  }
+
   .arrow {
-    font-size: 5vw;
+    position: static;
+    transform: none;
+    font-size: 6vw;
+    margin: 10px 20px 0;
   }
 
-  .left-arrow {
-    transform: translate(-100%, -50%);
-  }
-
+  .left-arrow,
   .right-arrow {
-    transform: translate(100%, -50%);
+    order: 1; /* appear below image */
+  }
+
+  /* Wrap arrows in a row if needed */
+  .project-image {
+    flex-wrap: wrap;
   }
 }
+
 /* Arrow Styling for the projects sec */
 
 
