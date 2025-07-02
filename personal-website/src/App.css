@@ -888,7 +888,7 @@ nav a.active {
 
 /* Arrow Styling */
 .arrow {
-  position: absolute; /* Now relative to .project-image */
+  position: absolute;
   font-size: 2.5vw;
   color: #61dafb;
   cursor: pointer;
@@ -896,26 +896,32 @@ nav a.active {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: transform 0.2s ease;
 }
 
+/* Anchor to edge of image, then shift out by fixed relative distance */
 .left-arrow {
-  left: -40px; /* pull arrow outside left edge */
+  left: 0;
+  transform: translate(-150%, -50%); /* push left of image */
 }
 
 .right-arrow {
-  right: -40px; /* pull arrow outside right edge */
+  right: 0;
+  transform: translate(150%, -50%); /* push right of image */
 }
 
-/* Optional: scale arrows for small screens */
+/* Responsive font size for small screens */
 @media (max-width: 768px) {
   .arrow {
     font-size: 5vw;
   }
+
   .left-arrow {
-    left: -25px;
+    transform: translate(-100%, -50%);
   }
+
   .right-arrow {
-    right: -25px;
+    transform: translate(100%, -50%);
   }
 }
 /* Arrow Styling for the projects sec */
