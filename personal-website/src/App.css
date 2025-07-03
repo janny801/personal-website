@@ -1259,6 +1259,9 @@ html {
 }
 
 
+
+
+/*dots for project indication */ 
 .dot-indicator {
   display: flex;
   justify-content: center;
@@ -1278,3 +1281,6 @@ html {
 .dot.active {
   background-color: #61dafb;
 }
+
+/*dots for project indication */ 
+
