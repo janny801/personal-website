@@ -1282,5 +1282,24 @@ html {
   background-color: #61dafb;
 }
 
+/* Smaller dots on medium screens */
+@media (max-width: 900px) {
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+  }
+}
+
+/* Even smaller dots on small screens */
+@media (max-width: 600px) {
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+  }
+}
+
+
 /*dots for project indication */ 
 
