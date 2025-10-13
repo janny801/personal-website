@@ -1173,6 +1173,14 @@ html {
   background-color: #5ec1e9; /* Slightly darker shade for hover effect */
 }
 
+/*github button*/
+.github-button {
+  display: block;
+  margin-top: 10px; /* adds a small gap below the resume button */
+  text-decoration: none; /* removes underline */
+}
+/*github button*/
+
 /* Modal Overlay */
 .modal-overlay {
   position: fixed;

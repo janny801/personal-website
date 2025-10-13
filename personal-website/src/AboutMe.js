@@ -76,12 +76,13 @@ function AboutMe() {
       <button className="resume-button" onClick={openModal}>
         View My Resume
       </button>
+
       {/* GitHub Button */}
       <a
         href="https://github.com/janny801"
         target="_blank"
         rel="noopener noreferrer"
-        className="resume-button"
+        className="resume-button github-button"
       >
         Check Out My GitHub
       </a>
