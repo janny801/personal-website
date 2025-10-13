@@ -8,6 +8,8 @@ import spaceGameImage from './proj-images/spacegame.png';
 import personalWebpageImage from './proj-images/personalwebpage.png'; // Import the new image
 import onenoteFixAHK from './proj-images/onenoteFixAHK.gif'; // Import the OneNote Navigation Fix GIF
 import customFolderIconImage from './proj-images/customFolderIcon.jpg';
+import coogMusicImage from './proj-images/coogmusic.jpg';
+
 
 
 import './App.css';
@@ -100,8 +102,8 @@ experience: `As briefly noted above, this was a 5-member group project for a cla
 I was mainly in charge of the backend side of the project, including communicating with the database via queries, setting up the database structure, and designing how we would store data — using Azure MySQL for structured data and Azure Blob Storage for songs and images.
 
 I also contributed to writing backend endpoints that communicated with the frontend, allowing users to send and receive the data they needed to interact with the platform.`,
-    link: 'https://coogmusic.com/',
-    image: null // Leave as null or undefined, and handle with iframe when rendering
+    link: null, 
+    image: coogMusicImage // use the imported image instead of iframe
   }, 
 
   {
@@ -155,22 +157,15 @@ function Projects() {
       {/* Slideshow container */}
       <div className="slideshow">
         <div className="project-image">
-          {currentProject.id === 5 ? (
-            <div className="iframe-wrapper">
-              <iframe
-                src={currentProject.link}
-                title="CoogMusic"
-                allowFullScreen
-                frameBorder="0"
-              ></iframe>
-            </div>
-          ) : (
-            <img src={currentProject.image} alt={currentProject.name} />
-          )}
+          <img src={currentProject.image} alt={currentProject.name} />
 
           {/* Arrows are now inside the project-image box for consistent placement */}
-          <span className="arrow left-arrow" onClick={prevProject}>&lt;</span>
-          <span className="arrow right-arrow" onClick={nextProject}>&gt;</span>
+          <span className="arrow left-arrow" onClick={prevProject}>
+            &lt;
+          </span>
+          <span className="arrow right-arrow" onClick={nextProject}>
+            &gt;
+          </span>
         </div>
 
           
