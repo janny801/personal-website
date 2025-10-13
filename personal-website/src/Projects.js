@@ -143,10 +143,13 @@ I tried downloading other apps to achieve this, but none of them worked reliably
   learnings: `I learned how to work effectively in a team with clear objectives and goals. This project introduced me to Google Apps Script, which I used to automate repetitive tasks and integrate logic directly into Google Sheets.`,
   experience: `I worked as the main developer in a team to automate the point tracking system for a school organization using Google Apps Script. This automation replaced manual entry, allowing event points to be automatically recorded and processed within the sheet. 
 
-  I spent significant time communicating with the people who would be using the system to understand their needs, ensuring that all useful features from the older manual version were retained while improving usability and efficiency.`,
+  I spent significant time communicating with the people who would be using the system to understand their needs, ensuring that all useful features from the older manual version were retained while improving usability and efficiency. 
+
+  Some of the names and cells in the system have been blurred or colored out in previews to protect potentially sensitive information.`,
   link: 'https://github.com/janny801/automate-PT-tracker-with-google-appscript-test',
   image: ptSystemImage,
 }
+
 
   
 ];
