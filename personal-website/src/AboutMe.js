@@ -37,29 +37,24 @@ function AboutMe() {
 
       {/* About Me text */}
       <div className="about-me-text">
-  <p>
-    I'm a passionate computer science student at the University of Houston with interests in technology, and fitness.
-  </p>
-  <p>
-  My experience includes working as a database development and management intern at NASA as well as personal projects ranging from AI-driven apps to Windows scripting tools.
-</p>
-
-  <p>
-    I am also a member of the Society of Asian Scientists and Engineers (SASE) at the University of Houston where I'm focusing on enhancing my soft skills and career preparation.
-  </p>
-  <p>
-    I served as the Web Development Intern for SASE during the Spring 2025 semester and am currently the Web Development Officer for the Fall 2025 – Spring 2026 school year.
-  </p>
-  <p>
-    As someone who spends a lot of time on the internet, I find inspiration in the projects and websites that I come across. This fuels my passion to create projects that blend technical ability and creativity.
-  </p>
-  <p>
-    Currently, I'm seeking internship opportunities in software development or database management and development, where I can apply my skills and continue learning. Recently, I've also been developing an interest in cybersecurity, expanding my understanding of technology’s critical role in secure data management. With a focus on continuous growth, I'm excited to make impactful contributions in technology-driven fields.
-  </p>
-</div>
+        <p>
+          I am a Computer Science student at the University of Houston Honors College, graduating in May 2027 with a capstone in cybersecurity.
+        </p>
+        <p>
+          I previously interned as a Database Developer at NASA’s Stennis Space Center, where I built a database that automated data integrations for 1,000+ projects, and worked with researchers to improve accessibility and workflow efficiency.
+        </p>
+        <p>
+          Currently, I serve as the Web Development Officer for the Society of Asian Scientists and Engineers (SASE), after first contributing as a Web Development Intern. In this role, I built automation systems that track engagement and streamline communications for over 400 members, while continuing to enhance the chapter’s digital presence through its website, Discord server, Linktree, and other online platforms.        </p>
+        <p>
+          Additionally through projects, I’ve applied my skills in both collaborative and academic settings. For example, at the HackTX hackathon I built an AI-driven chat and PDF analysis tool that gives tailored feedback based on the type of document, and in a database class I created CoogMusic, a Spotify-like streaming platform for UH students. These experiences reinforced my abilities in C++, JavaScript, Node.js, React, MySQL, and Microsoft Azure, and you can explore more of my work on GitHub.
+        </p>
+        <p>
+          I am seeking opportunities in Software Engineering Internships focused on full-stack or backend development, as well as Data Analysis roles and Cybersecurity projects where I can contribute to innovative teams, strengthen my technical skills, and create solutions that make a real impact.
+        </p>
+      </div>
 
 
-      {/* Slideshow container */}
+      {/* Slideshow container
       <div className="slideshow">
         <div className="aboutme-image">
           <img
@@ -75,7 +70,7 @@ function AboutMe() {
             &gt;
           </span>
         </div>
-      </div>
+      </div> */}
 
       {/* Resume Button */}
       <button className="resume-button" onClick={openModal}>
