@@ -9,6 +9,8 @@ import personalWebpageImage from './proj-images/personalwebpage.png'; // Import 
 import onenoteFixAHK from './proj-images/onenoteFixAHK.gif'; // Import the OneNote Navigation Fix GIF
 import customFolderIconImage from './proj-images/customFolderIcon.jpg';
 import coogMusicImage from './proj-images/coogmusic.jpg';
+import ptSystemImage from './proj-images/ptsystemimage.jpg';
+
 
 
 
@@ -133,9 +135,18 @@ It also gave me a better understanding of how Windows handles folder metadata an
 I tried downloading other apps to achieve this, but none of them worked reliably. So I decided to make my own solution, which is one of the main things that intrigues me about software development — being able to solve personal problems with custom tools.`,
   link: 'https://github.com/janny801/custom-folder-icons-windows',
   image: customFolderIconImage
+},
+
+{
+  id: 8,
+  name: 'Automated Point Tracking System',
+  learnings: `I learned how to work effectively in a team with clear objectives and goals. This project introduced me to Google Apps Script, which I used to automate repetitive tasks and integrate logic directly into Google Sheets.`,
+  experience: `I worked as the main developer in a team to automate the point tracking system for a school organization using Google Apps Script. This automation replaced manual entry, allowing event points to be automatically recorded and processed within the sheet. 
+
+  I spent significant time communicating with the people who would be using the system to understand their needs, ensuring that all useful features from the older manual version were retained while improving usability and efficiency.`,
+  link: 'https://github.com/janny801/automate-PT-tracker-with-google-appscript-test',
+  image: ptSystemImage,
 }
-
-
 
   
 ];
