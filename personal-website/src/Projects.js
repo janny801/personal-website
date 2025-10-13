@@ -97,11 +97,13 @@ I also used it as an opportunity to learn React.js, which is something that I ha
     I learned how to split up tasks efficiently while accommodating everyone's busy schedules, since this was created for a group project assignment in class. 
 
     While I continued sharpening my technical skills, I felt that my biggest growth was in learning how to work as a team to meet deadlines — an experience that gave me practical, real-world development insight.`,
-experience: `As briefly noted above, this was a 5-member group project for a class.
+    experience: `As briefly noted above, this was a 5-member group project for a class.
 
-I was mainly in charge of the backend side of the project, including communicating with the database via queries, setting up the database structure, and designing how we would store data — using Azure MySQL for structured data and Azure Blob Storage for songs and images.
+    I was mainly in charge of the backend side of the project, including communicating with the database via queries, setting up the database structure, and designing how we would store data — using Azure MySQL for structured data and Azure Blob Storage for songs and images.
 
-I also contributed to writing backend endpoints that communicated with the frontend, allowing users to send and receive the data they needed to interact with the platform.`,
+    I also contributed to writing backend endpoints that communicated with the frontend, allowing users to send and receive the data they needed to interact with the platform. 
+
+    This website is no longer available for public access since it was hosted on Microsoft Azure under a free plan, which has since expired.`,
     link: null, 
     image: coogMusicImage // use the imported image instead of iframe
   }, 
