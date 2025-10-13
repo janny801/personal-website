@@ -206,7 +206,7 @@ function Projects() {
         </div>
   
         <div className="project-details-section">
-          <h3>My Experience Making It</h3>
+          <h3>My Experience</h3>
           <p>{currentProject.experience}</p>
         </div>
   
