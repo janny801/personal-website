@@ -52,7 +52,10 @@ function ContactMe() {
 
       {/* Centered Contact Links */}
       <div className="contact-links" style={{ textAlign: 'center' }}>
-        <p><strong>Location: </strong>&nbsp; Houston, TX</p>
+        <p>
+          <span>Location:</span>
+          Houston, TX
+        </p>        
         <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+12016376539">+1 (201)-637-6539</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer">linkedin.com/in/janredsal</a></p>
