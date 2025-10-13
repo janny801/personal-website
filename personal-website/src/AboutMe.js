@@ -81,14 +81,14 @@ function AboutMe() {
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-  <iframe
-    src={resumePDF}
-    title="Janred Salubayba Resume"
-    style={{ width: '100%', height: '100%', border: 'none' }}
-  />
-  <button className="close-button" onClick={closeModal}>
-    Close
-  </button>
+      <iframe
+        src={resumePDF}
+        title="Janred Salubayba Resume"
+        style={{ width: '100%', height: '100%', border: 'none' }}
+      />
+      <button className="close-button" onClick={closeModal}>
+        Close
+      </button>
 </div>
 
         </div>
