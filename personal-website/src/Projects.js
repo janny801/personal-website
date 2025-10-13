@@ -167,9 +167,6 @@ function Projects() {
             &gt;
           </span>
         </div>
-
-          
-
       </div>
       
 
@@ -198,12 +195,19 @@ function Projects() {
           <p>{currentProject.experience}</p>
         </div>
   
-        <div className="project-link-section">
-          <h3>Check Out This Project Further</h3>
-          <a href={currentProject.link} target="_blank" rel="noopener noreferrer">
-            Visit {currentProject.name}
-          </a>
-        </div>
+        {/* Only show this section if the project has a link */}
+        {currentProject.link && (
+          <div className="project-link-section">
+            <h3>Check Out This Project Further</h3>
+            <a
+              href={currentProject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit {currentProject.name}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
