@@ -1175,9 +1175,10 @@ html {
 
 /*github button*/
 .github-button {
-  display: block;
-  margin-top: 10px; /* adds a small gap below the resume button */
-  text-decoration: none; /* removes underline */
+  display: block;            /* forces it to a new line */
+  width: fit-content;        /* keeps same width as text, not full width */
+  margin: 10px auto 0 auto;  /* centers it and adds space above */
+  text-decoration: none;     /* removes underline */
 }
 /*github button*/
 
