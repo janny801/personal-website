@@ -148,6 +148,26 @@ I tried downloading other apps to achieve this, but none of them worked reliably
   Some of the names and cells in the system have been blurred or colored out in previews to protect potentially sensitive information.`,
   link: 'https://github.com/janny801/automate-PT-tracker-with-google-appscript-test',
   image: ptSystemImage,
+  
+}, 
+
+{
+  id: 9,
+  name: 'DiFrauD Label Noise Analysis',
+learnings: `The main technical skills I developed through this project included Python, PyTorch, HuggingFace, and scikit-learn. 
+
+I applied Dataset Cartography to analyze label noise and training dynamics on the 95k+ sample DiFrauD deception detection dataset, tracking per-sample confidence, variability, and correctness across epochs. 
+
+I also trained and evaluated DistilBERT, SVM, and MLP models with multiple noise-handling strategies, which showed that performance gains were minimal due to the dataset being heavily pre-cleaned and influenced by architecture-dependent effects.`,
+  experience: `This was a collaborative project worked on with a team of two for a Security Analytics class at the University of Houston. 
+  
+  We focused on investigating how data quality impacts model reliability in security contexts. 
+  
+  Through this experience, I learned how to manage large-scale datasets and interpret the nuances of model performance when dealing with architecture-specific behavior versus data-driven noise.`,
+  link: null, 
+  image: null, 
+  // Add the embed link here
+  embedLink: "https://docs.google.com/presentation/d/e/2PACX-1vQ9bA0I2Tn_sgpGabFmn81x9xhBeum54lkl4rz-eT-lqtoOHzZY217UaRki482OatPnR_HiW1uGbPGD/embed?start=false&loop=false&delayms=3000"
 }
 
 
@@ -172,12 +192,24 @@ function Projects() {
     <div className="projects-container">
       <h2 className="projects-heading">Projects</h2>
   
-      {/* Slideshow container */}
+
       <div className="slideshow">
         <div className="project-image">
-          <img src={currentProject.image} alt={currentProject.name} />
+          {/* Logic to switch between Slides and Images */}
+          {currentProject.embedLink ? (
+            <iframe
+              src={currentProject.embedLink}
+              title={currentProject.name}
+              width="100%"
+              height="100%"
+              style={{ border: 'none', minHeight: '350px' }}
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <img src={currentProject.image} alt={currentProject.name} />
+          )}
 
-          {/* Arrows are now inside the project-image box for consistent placement */}
+          {/* Arrows remain inside the box */}
           <span className="arrow left-arrow" onClick={prevProject}>
             &lt;
           </span>
@@ -186,7 +218,6 @@ function Projects() {
           </span>
         </div>
       </div>
-      
 
       <div className="dot-indicator">
   {projectData.map((_, index) => (
