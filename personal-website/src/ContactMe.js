@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import './App.css';
 
 function ContactMe() {
@@ -51,15 +51,25 @@ function ContactMe() {
 
       {/* Contact Links and Icons */}
       <div className="contact-links" style={{ textAlign: 'center', color: '#fff' }}>
-      <p>
-        <strong>
-          Location 
-          <FaMapMarkerAlt style={{ marginLeft: '5px', verticalAlign: 'middle' }} />
-        </strong> 
-        Houston, TX
-      </p>
-        <p><strong>Email:</strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+12016376539">+1 (201)-637-6539</a></p>
+        <p>
+          <strong>
+            Location 
+            <FaMapMarkerAlt style={{ marginLeft: '5px', verticalAlign: 'middle', color: '#fff' }} />
+          </strong> 
+          Houston, TX
+        </p>
+        <p>
+          <strong>
+            Email
+            <FaEnvelope style={{ marginLeft: '5px', verticalAlign: 'middle', color: '#fff' }} />
+          </strong> <a href="mailto:jred8069@gmail.com">jred8069@gmail.com</a>
+        </p>
+        <p>
+          <strong>
+            Phone
+            <FaPhoneAlt style={{ marginLeft: '5px', verticalAlign: 'middle', color: '#fff' }} />
+          </strong> <a href="tel:+12016376539">+1 (201)-637-6539</a>
+        </p>
         
         {/* Social Icons Row */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', marginTop: '15px', fontSize: '2rem' }}>
