@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import selfImage1 from './proj-images/selfimage1.jpeg';
 import selfImage2 from './proj-images/selfimage2.png';
 import selfImage3 from './proj-images/selfimage3.png';
-import resumePDF from './proj-images/janred_resume_fa25.pdf';
+import resumePDF from './proj-images/jansalfa26.pdf';
 import './App.css';
 
 function AboutMe() {
