@@ -72,11 +72,11 @@ function ContactMe() {
         </p>
         
         {/* Social Icons Row */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', marginTop: '15px', fontSize: '2rem' }}>
-          <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', marginTop: '20px', fontSize: '2.5rem' }}>
+          <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer" title="LinkedIn" style={{ color: '#0077B5' }}>
             <FaLinkedin />
           </a>
-          <a href="https://github.com/janny801" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <a href="https://github.com/janny801" target="_blank" rel="noopener noreferrer" title="GitHub" style={{ color: '#fff' }}>
             <FaGithub />
           </a>
         </div>
