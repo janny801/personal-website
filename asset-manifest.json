@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.5b2cd137.css",
-    "main.js": "/personal-website/static/js/main.ce0e7481.js",
-    "static/js/453.253ccfac.chunk.js": "/personal-website/static/js/453.253ccfac.chunk.js",
+    "main.css": "/personal-website/static/css/main.80f2f185.css",
+    "main.js": "/personal-website/static/js/main.11313e66.js",
+    "static/js/453.54aa27cc.chunk.js": "/personal-website/static/js/453.54aa27cc.chunk.js",
     "static/media/onenoteFixAHK.gif": "/personal-website/static/media/onenoteFixAHK.d359921dbc16f3cf28ab.gif",
     "static/media/aichatappandpdfsummarizer.png": "/personal-website/static/media/aichatappandpdfsummarizer.6d261a5c49fa6efadb2e.png",
     "static/media/selfimage2.png": "/personal-website/static/media/selfimage2.6f4c45d04ba47997042c.png",
@@ -17,12 +17,12 @@
     "static/media/astronautflying.webp": "/personal-website/static/media/astronautflying.1a2c9353c01830c5f274.webp",
     "static/media/coogmusic.jpg": "/personal-website/static/media/coogmusic.34f3a1d6d9f8c398a5a9.jpg",
     "index.html": "/personal-website/index.html",
-    "main.5b2cd137.css.map": "/personal-website/static/css/main.5b2cd137.css.map",
-    "main.ce0e7481.js.map": "/personal-website/static/js/main.ce0e7481.js.map",
-    "453.253ccfac.chunk.js.map": "/personal-website/static/js/453.253ccfac.chunk.js.map"
+    "main.80f2f185.css.map": "/personal-website/static/css/main.80f2f185.css.map",
+    "main.11313e66.js.map": "/personal-website/static/js/main.11313e66.js.map",
+    "453.54aa27cc.chunk.js.map": "/personal-website/static/js/453.54aa27cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b2cd137.css",
-    "static/js/main.ce0e7481.js"
+    "static/css/main.80f2f185.css",
+    "static/js/main.11313e66.js"
   ]
 }
