@@ -38,7 +38,7 @@ function AboutMe() {
       {/* About Me text */}
       <div className="about-me-text">
         <p>
-          I am a Computer Science student at the University of Houston Honors College, graduating in May 2027 with a capstone in cybersecurity.
+          I am a Computer Science student at the University of Houston Honors College, graduating in December 2026 with a capstone in cybersecurity.
         </p>
         <p>
           I previously interned as a Database Developer at NASA’s Stennis Space Center, where I built a database that automated data integrations for 1,000+ projects, and worked with researchers to improve accessibility and workflow efficiency.
@@ -46,10 +46,10 @@ function AboutMe() {
         <p>
           Currently, I serve as the Web Development Officer for the Society of Asian Scientists and Engineers (SASE), after first contributing as a Web Development Intern. In this role, I built automation systems that track engagement and streamline communications for over 400 members, while continuing to enhance the chapter’s digital presence through its website, Discord server, Linktree, and other online platforms.        </p>
         <p>
-          Additionally through projects, I’ve applied my skills in both collaborative and academic settings. For example, at the HackTX hackathon I built an AI-driven chat and PDF analysis tool that gives tailored feedback based on the type of document, and in a database class I created CoogMusic, a Spotify-like streaming platform for UH students. These experiences reinforced my abilities in C++, JavaScript, Node.js, React, MySQL, and Microsoft Azure, and you can explore more of my work on GitHub.
+          My technical growth is driven by both academic and collaborative projects. From building an AI-driven PDF analyzer at HackTX to developing CoogMusic, a streaming platform for UH students, I enjoy applying my skills to create functional, user-focused applications. You can explore more of my work on GitHub.
         </p>
         <p>
-          I am seeking opportunities in Software Engineering Internships focused on full-stack or backend development, as well as Data Analysis roles and Cybersecurity projects where I can contribute to innovative teams, strengthen my technical skills, and create solutions that make a real impact.
+          I find the most fulfillment in creating tools that solve real-world problems and help others within a team-driven environment. I am passionate about building impactful solutions and collaborating with others to turn innovative ideas into reality.
         </p>
       </div>
 
