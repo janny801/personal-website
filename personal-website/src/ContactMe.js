@@ -49,7 +49,6 @@ function ContactMe() {
       <h2>Contact Me</h2>
       <p>Feel free to reach out through any of the links below or send me a message directly.</p>
 
-      {/* Contact Links and Icons */}
       <div className="contact-links" style={{ textAlign: 'center', color: '#fff' }}>
         <p>
           <strong>
@@ -71,7 +70,6 @@ function ContactMe() {
           </strong> <a href="tel:+12016376539">+1 (201)-637-6539</a>
         </p>
         
-        {/* Social Icons Row */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', marginTop: '20px', fontSize: '2.5rem' }}>
           <a href="https://linkedin.com/in/janredsal" target="_blank" rel="noopener noreferrer" title="LinkedIn" style={{ color: '#0077B5' }}>
             <FaLinkedin />
