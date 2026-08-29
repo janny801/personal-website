@@ -10,6 +10,7 @@ import onenoteFixAHK from './proj-images/onenoteFixAHK.gif'; // Import the OneNo
 import customFolderIconImage from './proj-images/customFolderIcon.jpg';
 import coogMusicImage from './proj-images/coogmusic.jpg';
 import ptSystemImage from './proj-images/ptsystemimage.jpg';
+import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40 PM.png'; 
 
 
 
@@ -168,6 +169,21 @@ I also trained and evaluated DistilBERT, SVM, and MLP models with multiple noise
   image: null, 
   // Add the embed link here
   embedLink: "https://docs.google.com/presentation/d/e/2PACX-1vQ9bA0I2Tn_sgpGabFmn81x9xhBeum54lkl4rz-eT-lqtoOHzZY217UaRki482OatPnR_HiW1uGbPGD/embed?start=false&loop=false&delayms=3000"
+},
+
+{
+  id: 10,
+  name: 'SASE Memberhub',
+  learnings: `The main technical skills I developed during this project included full-stack web development, user role management, and third-party API integration such as Google Calendar.
+
+I learned how to structure member-facing portals alongside administration features to organize resources effectively, including research opportunities, professional resources, internship databases, and alumni networks.
+
+Overall, this project enhanced my skills in building intuitive user interfaces, handling dynamic organization data, and managing real-time calendar and hub features for student organizations.`,
+  experience: `I built the SASE MemberHub for the Society of Asian Scientists and Engineers (SASE) chapter at the University of Houston to serve as a central portal for chapter members and officers.
+
+The application brings together an event calendar, undergraduate research resources, professional development materials, an internship database, an alumni network, and an administrative portal, streamlining organization communication and resource sharing.`,
+  link: 'https://github.com/janny801/saseHUB',
+  image: saseMemberHubImage, 
 }
 
 
