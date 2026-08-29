@@ -73,7 +73,7 @@ function App() {
   }, [spacers]);
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <StarryBackground scrollContainerRef={scrollContainerRef} />
         <div className="content" ref={scrollContainerRef}>
