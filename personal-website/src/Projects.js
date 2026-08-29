@@ -6,16 +6,15 @@ import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 import realTimeChatImage from './proj-images/realtimechatapp.png';
 import spaceGameImage from './proj-images/spacegame.png';
 import personalWebpageImage from './proj-images/personalwebpage.png'; // Import the new image
-import onenoteFixAHK from './proj-images/onenoteFixAHK.gif'; // Import the OneNote Navigation Fix GIF
+
 import customFolderIconImage from './proj-images/customFolderIcon.jpg';
 import coogMusicImage from './proj-images/coogmusic.jpg';
 import ptSystemImage from './proj-images/ptsystemimage.jpg';
 import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40 PM.png'; 
-
-
-
-
 import './App.css';
+
+const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
+
 
 const projectData = [
   {

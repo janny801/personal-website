@@ -73,7 +73,7 @@ function App() {
   }, [spacers]);
 
   return (
-    <Router basename="/personal-website">
+    <Router>
       <div className="App">
         <StarryBackground scrollContainerRef={scrollContainerRef} />
         <div className="content" ref={scrollContainerRef}>
