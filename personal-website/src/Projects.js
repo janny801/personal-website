@@ -11,6 +11,7 @@ import customFolderIconImage from './proj-images/customFolderIcon.jpg';
 import coogMusicImage from './proj-images/coogmusic.jpg';
 import ptSystemImage from './proj-images/ptsystemimage.jpg';
 import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40 PM.png'; 
+import songSwipeImage from './proj-images/screen_swipe.png';
 import './App.css';
 
 const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
@@ -183,6 +184,25 @@ Overall, this project enhanced my skills in building intuitive user interfaces, 
 The application brings together an event calendar, undergraduate research resources, professional development materials, an internship database, an alumni network, and an administrative portal, streamlining organization communication and resource sharing.`,
   link: 'https://github.com/janny801/saseHUB',
   image: saseMemberHubImage, 
+},
+
+{
+  id: 11,
+  name: 'SongSwipe',
+  learnings: `The main technical skills I developed through this project included React Native, Expo, Node.js, Express, PostgreSQL, and the Spotify Web API.
+
+I learned how to build a mobile application with interactive swipe gestures, audio playback, haptic feedback, and mobile navigation while testing across the iOS Simulator and a physical iPhone.
+
+I also gained experience designing RESTful APIs, structuring a PostgreSQL database, integrating Spotify data and audio previews, and implementing OAuth-based account connections.
+
+Overall, this project strengthened my skills in full-stack mobile development, third-party API integration, and building personalized recommendation experiences.`,
+  experience: `SongSwipe was an independent full-stack mobile application inspired by swipe-based discovery platforms. I built the React Native and Expo iOS experience to let users discover songs through interactive cards, listen to previews, and save tracks to a personalized playlist.
+
+I designed and developed the application architecture, database schema, backend endpoints, and mobile interface. The recommendation experience combines favorite genres, previous swipe behavior, related artists, and trending music to create a more personalized discovery feed.
+
+The application also supports connecting a Spotify account through OAuth, with functionality designed to help users add discovered songs to their existing Spotify playlists.`,
+  link: 'https://github.com/janny801/songSwipe',
+  image: songSwipeImage,
 }
 
 
