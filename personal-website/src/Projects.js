@@ -12,6 +12,7 @@ import coogMusicImage from './proj-images/coogmusic.jpg';
 import ptSystemImage from './proj-images/ptsystemimage.jpg';
 import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40 PM.png'; 
 import songSwipeImage from './proj-images/screen_swipe.png';
+import fitVaultImage from './proj-images/fitvault.png';
 import './App.css';
 
 const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
@@ -203,6 +204,24 @@ I designed and developed the application architecture, database schema, backend 
 The application also supports connecting a Spotify account through OAuth, with functionality designed to help users add discovered songs to their existing Spotify playlists.`,
   link: 'https://github.com/janny801/songSwipe',
   image: songSwipeImage,
+},
+
+{
+  id: 12,
+  name: 'FitVault',
+  learnings: `Through this project, I strengthened my ability to work in a team while improving my skills in UX design and utilizing APIs for AI.
+
+I focused heavily on user experience (UX) to create an intuitive, modern mobile interface for managing digital wardrobes, styling pieces, and discovering outfit ideas.
+
+Additionally, I gained hands-on experience utilizing AI APIs, learning how to connect and interact with AI models for intelligent styling and wardrobe assistance, handle prompt workflows, and integrate AI responses smoothly into the application.`,
+  experience: `FitVault was created at the UTHack hackathon in a team of 3.
+
+Collaborating in a 3-person team during an intensive hackathon environment challenged us to quickly brainstorm concepts, divide responsibilities across design and development, and build an ambitious project within a tight deadline.
+
+Working together taught me the importance of clear communication, teamwork, and agile iteration to turn an idea into a functional AI-powered wardrobe assistant.`,
+  link: 'https://fitvault.space/',
+  linkText: 'Check out this project',
+  image: fitVaultImage,
 }
 
 
@@ -288,7 +307,7 @@ function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visit {currentProject.name}
+              {currentProject.linkText || `Visit ${currentProject.name}`}
             </a>
           </div>
         )}
