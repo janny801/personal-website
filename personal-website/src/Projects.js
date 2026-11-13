@@ -13,6 +13,7 @@ import ptSystemImage from './proj-images/ptsystemimage.jpg';
 import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40 PM.png'; 
 import songSwipeImage from './proj-images/screen_swipe.png';
 import fitVaultImage from './proj-images/fitvault.png';
+import firstTripImage from './proj-images/firsttrip.jpg';
 import './App.css';
 
 const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
@@ -222,6 +223,26 @@ Working together taught me the importance of clear communication, teamwork, and 
   link: 'https://fitvault.space/',
   linkText: 'Check out this project',
   image: fitVaultImage,
+},
+
+{
+  id: 13,
+  name: 'FirstTrip (Right Crew / Right Time)',
+  learnings: `The key technical skills developed during this project included two-stage machine learning pipelines, probability calibration with Isotonic Regression, leakage-free temporal data engineering, DuckDB, FastAPI, and React/TypeScript dashboard architecture.
+
+I worked extensively with Python (scikit-learn HistGradientBoostingClassifier), DuckDB, pandas, and Parquet logs across 549,000+ historical utility outage events. We engineered a calibrated Stage 1 second-trip risk model paired with a Stage 2 conditional 6-class crew-type classifier to predict the optimal crew specialization needed at the moment of first dispatch under asymmetrical cost constraints.
+
+A major focus was bulletproof data integrity: enforcing chronological train/validation/test splits, applying temporal causal masking to strip post-dispatch data, de-biasing device replacement snapshots, and computing point-in-time rolling storm load and failure metrics strictly prior to dispatch timestamps.
+
+On the full-stack side, we designed a reactive FastAPI REST API with Pydantic schemas and built a Vite + React + TypeScript + Tailwind CSS dispatcher dashboard featuring minute-by-minute historic storm replay, risk banding, factor explainability cards, and dispatcher decision auditing.`,
+  experience: `FirstTrip was built at the UH Code Coogs × CenterPoint Energy (CNP) Hackathon 2026 (Track 3) alongside a team of 4 engineers and data scientists, where I served in Full-Stack & ML Engineering and System Architecture roles.
+
+In severe weather and high-load events, utility companies face approximately a 13% second-trip rate when the initial crew lacks specialized qualifications or equipment, causing duplicate drive times, prolonged customer outages, and high operational costs.
+
+We tackled this high-stakes operational problem under intense hackathon deadlines, collaborating closely across data science, backend, and frontend domains to deliver a complete, interpretable decision-support copilot for utility dispatchers.`,
+  link: 'https://devpost.com/jred8069?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav',
+  linkText: 'Check out more information on my Devpost',
+  image: firstTripImage,
 }
 
 
