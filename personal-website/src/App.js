@@ -10,6 +10,18 @@ import './App.css';
 function NavigationHotkeys() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [activeHotkey, setActiveHotkey] = useState(null);
+  const fadeTimeoutRef = useRef(null);
+
+  const showHotkey = (keys, label) => {
+    if (fadeTimeoutRef.current) {
+      clearTimeout(fadeTimeoutRef.current);
+    }
+    setActiveHotkey({ keys, label });
+    fadeTimeoutRef.current = setTimeout(() => {
+      setActiveHotkey(null);
+    }, 1800);
+  };
 
   useEffect(() => {
     const pressedKeys = new Set();
@@ -32,23 +44,34 @@ function NavigationHotkeys() {
 
       // Check if both 'j' and 's' are pressed simultaneously for homepage
       if (pressedKeys.has('j') && pressedKeys.has('s')) {
+        showHotkey(['J', 'S'], 'Homepage');
         navigate('/');
         return;
       }
 
       // On /projects, 'j' and 'k' navigate left and right through projects
-      if (location.pathname === '/projects' && (key === 'j' || key === 'k')) {
-        return;
+      if (location.pathname === '/projects') {
+        if (key === 'j') {
+          showHotkey(['J'], 'Previous Project');
+          return;
+        }
+        if (key === 'k') {
+          showHotkey(['K'], 'Next Project');
+          return;
+        }
       }
 
       switch (key) {
         case 'p':
+          showHotkey(['P'], 'Projects');
           navigate('/projects');
           break;
         case 'a':
+          showHotkey(['A'], 'About Me');
           navigate('/about');
           break;
         case 'c':
+          showHotkey(['C'], 'Contact Me');
           navigate('/contact');
           break;
         default:
@@ -72,10 +95,27 @@ function NavigationHotkeys() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('blur', handleWindowBlur);
+      if (fadeTimeoutRef.current) {
+        clearTimeout(fadeTimeoutRef.current);
+      }
     };
   }, [navigate, location.pathname]);
 
-  return null;
+  if (!activeHotkey) return null;
+
+  return (
+    <div className="key-visualizer" aria-live="polite">
+      <div className="keyviz-keys">
+        {activeHotkey.keys.map((k, idx) => (
+          <React.Fragment key={idx}>
+            {idx > 0 && <span className="keyviz-plus">+</span>}
+            <span className="keyviz-key">{k}</span>
+          </React.Fragment>
+        ))}
+      </div>
+      <span className="keyviz-label">{activeHotkey.label}</span>
+    </div>
+  );
 }
 
 function App() {

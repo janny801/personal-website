@@ -1358,4 +1358,77 @@ html {
   margin-top: 4px;
   text-align: center;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Key visualizer HUD (bottom left) */
+.key-visualizer {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(4, 4, 22, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(97, 218, 251, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 8px 12px;
+  pointer-events: none;
+  animation: keyvizFadeIn 0.15s ease-out;
+  transition: opacity 0.3s ease;
+}
+
+.keyviz-keys {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.keyviz-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(180deg, #1f2747 0%, #0d1224 100%);
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 #00567a, 0 4px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 5px rgba(97, 218, 251, 0.6);
+  transform: translateY(-1px);
+}
+
+.keyviz-plus {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  color: #61dafb;
+  margin: 0 2px;
+}
+
+.keyviz-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: #b0b0d0;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+@keyframes keyvizFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 } 
