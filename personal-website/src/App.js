@@ -12,6 +12,8 @@ function NavigationHotkeys() {
   const location = useLocation();
 
   useEffect(() => {
+    const pressedKeys = new Set();
+
     const handleKeyDown = (event) => {
       // Don't trigger hotkeys if user is typing in an input, textarea, or contentEditable element
       const target = event.target;
@@ -26,16 +28,20 @@ function NavigationHotkeys() {
       if (event.ctrlKey || event.altKey || event.metaKey) return;
 
       const key = event.key.toLowerCase();
+      pressedKeys.add(key);
 
-      // On /projects, 'j' and 'k' navigate left and right through projects instead of going to homepage
+      // Check if both 'j' and 's' are pressed simultaneously for homepage
+      if (pressedKeys.has('j') && pressedKeys.has('s')) {
+        navigate('/');
+        return;
+      }
+
+      // On /projects, 'j' and 'k' navigate left and right through projects
       if (location.pathname === '/projects' && (key === 'j' || key === 'k')) {
         return;
       }
 
       switch (key) {
-        case 'j':
-          navigate('/');
-          break;
         case 'p':
           navigate('/projects');
           break;
@@ -50,8 +56,23 @@ function NavigationHotkeys() {
       }
     };
 
+    const handleKeyUp = (event) => {
+      pressedKeys.delete(event.key.toLowerCase());
+    };
+
+    const handleWindowBlur = () => {
+      pressedKeys.clear();
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('blur', handleWindowBlur);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('blur', handleWindowBlur);
+    };
   }, [navigate, location.pathname]);
 
   return null;
@@ -133,6 +154,7 @@ function App() {
             <Link to="/" className="homepage-link">
               {displayedText}
               <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
+              <span className="key-badge name-key-badge">J + S</span>
             </Link>
           </h1>
           <nav>

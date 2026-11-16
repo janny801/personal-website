@@ -1335,11 +1335,14 @@ html {
 }
 
 .name-key-badge {
-  font-size: 0.8rem;
-  margin-left: 12px;
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  font-size: 0.65rem;
+  margin-left: 14px;
+  border-color: rgba(97, 218, 251, 0.5);
+  color: #61dafb;
   vertical-align: middle;
+  letter-spacing: normal;
+  text-shadow: none;
+  font-weight: normal;
 }
 
 /* Arrow hotkey badge for project carousel */
