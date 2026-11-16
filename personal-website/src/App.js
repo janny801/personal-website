@@ -12,26 +12,30 @@ function NavigationHotkeys() {
   const location = useLocation();
   const [activeHotkey, setActiveHotkey] = useState(null);
   const [isFading, setIsFading] = useState(false);
-  const fadeTimeoutRef = useRef(null);
-  const removeTimeoutRef = useRef(null);
 
   const showHotkey = (keys, label) => {
-    if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
-    if (removeTimeoutRef.current) clearTimeout(removeTimeoutRef.current);
-
     setActiveHotkey({ keys, label });
     setIsFading(false);
+  };
 
-    // Start fade-out after 2.5 seconds, then unmount at 3 seconds
-    fadeTimeoutRef.current = setTimeout(() => {
+  // Manage fadeout timer independently so route transitions do not cancel it
+  useEffect(() => {
+    if (!activeHotkey) return;
+
+    const fadeTimer = setTimeout(() => {
       setIsFading(true);
     }, 2500);
 
-    removeTimeoutRef.current = setTimeout(() => {
+    const removeTimer = setTimeout(() => {
       setActiveHotkey(null);
       setIsFading(false);
     }, 3000);
-  };
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, [activeHotkey]);
 
   useEffect(() => {
     const pressedKeys = new Set();
@@ -105,8 +109,6 @@ function NavigationHotkeys() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('blur', handleWindowBlur);
-      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
-      if (removeTimeoutRef.current) clearTimeout(removeTimeoutRef.current);
     };
   }, [navigate, location.pathname]);
 
