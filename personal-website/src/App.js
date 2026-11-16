@@ -11,16 +11,26 @@ function NavigationHotkeys() {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeHotkey, setActiveHotkey] = useState(null);
+  const [isFading, setIsFading] = useState(false);
   const fadeTimeoutRef = useRef(null);
+  const removeTimeoutRef = useRef(null);
 
   const showHotkey = (keys, label) => {
-    if (fadeTimeoutRef.current) {
-      clearTimeout(fadeTimeoutRef.current);
-    }
+    if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+    if (removeTimeoutRef.current) clearTimeout(removeTimeoutRef.current);
+
     setActiveHotkey({ keys, label });
+    setIsFading(false);
+
+    // Start fade-out after 2.5 seconds, then unmount at 3 seconds
     fadeTimeoutRef.current = setTimeout(() => {
+      setIsFading(true);
+    }, 2500);
+
+    removeTimeoutRef.current = setTimeout(() => {
       setActiveHotkey(null);
-    }, 1800);
+      setIsFading(false);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -95,16 +105,15 @@ function NavigationHotkeys() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('blur', handleWindowBlur);
-      if (fadeTimeoutRef.current) {
-        clearTimeout(fadeTimeoutRef.current);
-      }
+      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+      if (removeTimeoutRef.current) clearTimeout(removeTimeoutRef.current);
     };
   }, [navigate, location.pathname]);
 
   if (!activeHotkey) return null;
 
   return (
-    <div className="key-visualizer" aria-live="polite">
+    <div className={`key-visualizer ${isFading ? 'fading' : ''}`} aria-live="polite">
       <div className="keyviz-keys">
         {activeHotkey.keys.map((k, idx) => (
           <React.Fragment key={idx}>
