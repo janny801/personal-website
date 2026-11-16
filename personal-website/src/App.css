@@ -1315,5 +1315,44 @@ html {
   }
 }
 
-
 /*dots for project indication */ 
+
+/* Key badge styling for hotkey indicators */
+.key-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-family: 'Press Start 2P', monospace;
+  color: #61dafb;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(97, 218, 251, 0.5);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin-left: 6px;
+  line-height: 1;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.name-key-badge {
+  font-size: 0.8rem;
+  margin-left: 12px;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  vertical-align: middle;
+}
+
+/* Arrow hotkey badge for project carousel */
+.arrow-key-badge {
+  display: block;
+  font-size: 0.55rem;
+  font-family: 'Press Start 2P', monospace;
+  color: #61dafb;
+  background-color: rgba(4, 4, 22, 0.7);
+  border: 1px solid rgba(97, 218, 251, 0.5);
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-top: 4px;
+  text-align: center;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+} 

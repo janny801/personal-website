@@ -1,11 +1,61 @@
 import React, { useState, useEffect, useRef } from 'react';
 import StarryBackground from './StarryBackground';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate, useLocation } from 'react-router-dom';
 import Projects from './Projects';
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
 import astronautImage from './proj-images/astronautflying.webp';
 import './App.css';
+
+function NavigationHotkeys() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Don't trigger hotkeys if user is typing in an input, textarea, or contentEditable element
+      const target = event.target;
+      const isInput =
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable;
+
+      if (isInput) return;
+
+      // Ignore shortcuts if modifier keys like Ctrl, Alt, Meta/Command are pressed
+      if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+      const key = event.key.toLowerCase();
+
+      // On /projects, 'j' and 'k' navigate left and right through projects instead of going to homepage
+      if (location.pathname === '/projects' && (key === 'j' || key === 'k')) {
+        return;
+      }
+
+      switch (key) {
+        case 'j':
+          navigate('/');
+          break;
+        case 'p':
+          navigate('/projects');
+          break;
+        case 'a':
+          navigate('/about');
+          break;
+        case 'c':
+          navigate('/contact');
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [navigate, location.pathname]);
+
+  return null;
+}
 
 function App() {
   const [displayedText, setDisplayedText] = useState('');
@@ -74,6 +124,7 @@ function App() {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      <NavigationHotkeys />
       <div className="App">
         <StarryBackground scrollContainerRef={scrollContainerRef} />
         <div className="content" ref={scrollContainerRef}>
@@ -85,9 +136,15 @@ function App() {
             </Link>
           </h1>
           <nav>
-            <Link to="/projects">Projects</Link>
-            <Link to="/about">About Me</Link>
-            <Link to="/contact">Contact Me</Link>
+            <Link to="/projects">
+              Projects <span className="key-badge">P</span>
+            </Link>
+            <Link to="/about">
+              About Me <span className="key-badge">A</span>
+            </Link>
+            <Link to="/contact">
+              Contact Me <span className="key-badge">C</span>
+            </Link>
           </nav>
           <Routes>
             <Route

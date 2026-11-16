@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import aiChatImage from './proj-images/aichatappandpdfsummarizer.png';
 import realTimeChatImage from './proj-images/realtimechatapp.png';
 import spaceGameImage from './proj-images/spacegame.png';
@@ -262,6 +262,29 @@ function Projects() {
     );
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Don't trigger if user is interacting with an input or editable element
+      const target = event.target;
+      const isInput =
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable;
+
+      if (isInput) return;
+      if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+      if (event.key.toLowerCase() === 'j') {
+        prevProject();
+      } else if (event.key.toLowerCase() === 'k') {
+        nextProject();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const currentProject = projectData[currentProjectIndex];
   return (
     <div className="projects-container">
@@ -285,11 +308,13 @@ function Projects() {
           )}
 
           {/* Arrows remain inside the box */}
-          <span className="arrow left-arrow" onClick={prevProject}>
+          <span className="arrow left-arrow" onClick={prevProject} title="Press 'J' or click to go to previous project">
             &lt;
+            <span className="arrow-key-badge">J</span>
           </span>
-          <span className="arrow right-arrow" onClick={nextProject}>
+          <span className="arrow right-arrow" onClick={nextProject} title="Press 'K' or click to go to next project">
             &gt;
+            <span className="arrow-key-badge">K</span>
           </span>
         </div>
       </div>
