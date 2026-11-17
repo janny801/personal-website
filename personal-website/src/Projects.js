@@ -14,6 +14,7 @@ import saseMemberHubImage from './proj-images/Screenshot 2026-08-28 at 7.42.40â€
 import songSwipeImage from './proj-images/screen_swipe.png';
 import fitVaultImage from './proj-images/fitvault.png';
 import firstTripImage from './proj-images/firsttrip.jpg';
+import thockCheckImage from './proj-images/thockcheck.jpg';
 import './App.css';
 
 const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
@@ -243,6 +244,24 @@ We tackled this high-stakes operational problem under intense hackathon deadline
   link: 'https://devpost.com/jred8069?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav',
   linkText: 'Check out more information on my Devpost',
   image: firstTripImage,
+},
+
+{
+  id: 14,
+  name: 'ThockCheck',
+  learnings: `The key technical skills developed through this project included TypeScript, Node.js, Express, PostgreSQL, Tailwind CSS, REST APIs, Zod, and automated testing with Vitest and Supertest.
+
+I designed a modular backend architecture featuring strict Zod schema validation, JWT authentication, and service-layer separation for clean maintainability. I also designed a relational PostgreSQL schema supporting multi-part build sheets, categorized components, threaded discussion comments, and user collections.
+
+On the frontend, I engineered a responsive dark-mode interface with Tailwind CSS, implementing dynamic filter tag bars, an omnibar search across keyboards, parts, and creators, as well as an interactive part-tagging and build-submission flow.`,
+  experience: `I created ThockCheck as a full-stack developer and designer to give mechanical keyboard enthusiasts a proper home to showcase their custom setups.
+
+General social platforms lack structured specs, making it painful to track down what switches, plates, or mods someone used. ThockCheck turns static keyboard photos into detailed, repeatable build guides with structured spec sheets, vendor links, and a community rating system.
+
+The platform provides high-resolution build galleries with optional sound/typing clips, interactive mod and component breakdowns, transparent 1â€“10 community ratings and critique threads, parts directory filters, and personalized builder vaults.`,
+  link: 'https://thockcheck.onrender.com/#home',
+  linkText: 'Visit ThockCheck Live Demo',
+  image: thockCheckImage,
 }
 
 
