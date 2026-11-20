@@ -23,6 +23,12 @@ npm run deploy
 - Make sure the `homepage` field in your `package.json` is correctly set:  
   - Example: `"homepage": "https://janny801.github.io/personal-website"`
 
+## 📌 Sections & Features
+
+- **Project Showcase:** Interactive carousel highlighting personal, academic, and hackathon projects with technical learnings, implementation background, and direct repository/demo links. Supports keyboard shortcuts (`J`/`K`) for swift navigation.
+- **About Me:** Professional background, internship experiences (NASA Stennis Space Center, SASE Web Dev Officer), education, photos, and a downloadable resume.
+- **Contact:** Direct contact options including location, email, phone, LinkedIn, GitHub, and a working contact form powered by **EmailJS**.
+
 ## 🛠️ Technologies Used  
 
 - **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3  
