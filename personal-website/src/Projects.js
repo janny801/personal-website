@@ -15,6 +15,7 @@ import songSwipeImage from './proj-images/screen_swipe.png';
 import fitVaultImage from './proj-images/fitvault.png';
 import firstTripImage from './proj-images/firsttrip.jpg';
 import thockCheckImage from './proj-images/thockcheck.jpg';
+import volumeMixerImage from './proj-images/volumemixer.jpg';
 import './App.css';
 
 const onenoteFixAHK = process.env.PUBLIC_URL + '/proj-images/onenoteFixAHK.gif'; // Served statically from public directory
@@ -262,6 +263,23 @@ The platform provides high-resolution build galleries with optional sound/typing
   link: 'https://thockcheck.onrender.com/#home',
   linkText: 'Visit ThockCheck Live Demo',
   image: thockCheckImage,
+},
+
+{
+  id: 15,
+  name: 'Volume Mixer',
+  learnings: `The key technical skills developed during this project included macOS system programming with Swift and Objective-C, Core Audio routing, system audio tap/capture APIs, perceptual volume curve mapping, and menu-bar application lifecycle management.
+
+I engineered a lightweight macOS menu-bar utility that manages per-application volume controls dynamically from 0% to 100% without persistent audio drivers or amplification distortion. The system automatically groups helper processes (e.g., browser and Electron audio subprocesses) under their parent applications and rebuilds audio graphs dynamically on output device changes.
+
+A core focus was zero-overhead passthrough: apps at 100% volume bypass audio capture and processing completely to preserve native audio quality with zero latency penalty. When attenuation occurs, audio is processed locally in-memory using a perceptual cubic taper (gain = (percentage / 100)³) with brief smoothing to prevent audible clicks.`,
+  experience: `I built Volume Mixer to give macOS users seamless, per-app audio mixing right from the menu bar—similar to Windows volume mixer functionality—without requiring heavy kernel extensions, virtual sound cards, or background daemon installations.
+
+The app provides quick-access individual app volume sliders, one-click mute/restore, reset-all controls, active audio level indicators, and optional launch at login.
+
+Designed for security and clean uninstalls, all audio processing remains strictly local in-memory with zero disk recording or network egress, and deleting the app cleanly removes it without leftover background drivers.`,
+  link: 'https://github.com/janny801/volume-mixer',
+  image: volumeMixerImage,
 }
 
 
