@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.7cf7972c.css",
-    "main.js": "/personal-website/static/js/main.2adcddfb.js",
+    "main.js": "/personal-website/static/js/main.842640c2.js",
     "static/js/453.54aa27cc.chunk.js": "/personal-website/static/js/453.54aa27cc.chunk.js",
     "static/media/aichatappandpdfsummarizer.png": "/personal-website/static/media/aichatappandpdfsummarizer.6d261a5c49fa6efadb2e.png",
     "static/media/selfimage2.png": "/personal-website/static/media/selfimage2.6f4c45d04ba47997042c.png",
@@ -13,6 +13,7 @@
     "static/media/ptsystemimage.jpg": "/personal-website/static/media/ptsystemimage.c58d47c6ee7edeb440b1.jpg",
     "static/media/Screenshot 2026-08-28 at 7.42.40 PM.png": "/personal-website/static/media/Screenshot 2026-08-28 at 7.42.40 PM.b3cf5d51525cf5c26c29.png",
     "static/media/fitvault.png": "/personal-website/static/media/fitvault.a5f66760f013567d4639.png",
+    "static/media/volumemixer.jpg": "/personal-website/static/media/volumemixer.afe3fdbb7a70bcd70738.jpg",
     "static/media/janredResumefall2026.pdf": "/personal-website/static/media/janredResumefall2026.20e3f98aa0b4f1609a06.pdf",
     "static/media/customFolderIcon.jpg": "/personal-website/static/media/customFolderIcon.ec54ca809a210c840ee3.jpg",
     "static/media/selfimage1.jpeg": "/personal-website/static/media/selfimage1.f22134188bac800ce11d.jpeg",
@@ -22,11 +23,11 @@
     "static/media/coogmusic.jpg": "/personal-website/static/media/coogmusic.34f3a1d6d9f8c398a5a9.jpg",
     "index.html": "/personal-website/index.html",
     "main.7cf7972c.css.map": "/personal-website/static/css/main.7cf7972c.css.map",
-    "main.2adcddfb.js.map": "/personal-website/static/js/main.2adcddfb.js.map",
+    "main.842640c2.js.map": "/personal-website/static/js/main.842640c2.js.map",
     "453.54aa27cc.chunk.js.map": "/personal-website/static/js/453.54aa27cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cf7972c.css",
-    "static/js/main.2adcddfb.js"
+    "static/js/main.842640c2.js"
   ]
 }
