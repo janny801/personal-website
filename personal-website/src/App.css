@@ -56,13 +56,15 @@ body {
   overflow: hidden;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 .content {
   position: relative;
-  padding: 0;
+  padding: 20px 0 0;
   margin: 0;
   overflow-y: auto;
   max-height: 100vh;
+  text-align: center;
 }
 .infinite-scroll-container {
   margin-top: 20px;
@@ -139,7 +141,8 @@ h1 {
   color: transparent;
   -webkit-text-stroke: 1px white;
   font-family: 'Orbitron', sans-serif;
-  display: inline-block;
+  display: block;
+  text-align: center;
   white-space: normal;
   word-break: break-word;
   max-width: 95vw;
@@ -147,7 +150,11 @@ h1 {
 
 /* Navigation Styling */
 nav {
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav a {
