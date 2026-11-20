@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.2361c806.css",
+    "main.css": "/personal-website/static/css/main.3fbd2f3b.css",
     "main.js": "/personal-website/static/js/main.2adcddfb.js",
     "static/js/453.54aa27cc.chunk.js": "/personal-website/static/js/453.54aa27cc.chunk.js",
     "static/media/aichatappandpdfsummarizer.png": "/personal-website/static/media/aichatappandpdfsummarizer.6d261a5c49fa6efadb2e.png",
@@ -21,12 +21,12 @@
     "static/media/thockcheck.jpg": "/personal-website/static/media/thockcheck.43bfa1ec436d8a03c540.jpg",
     "static/media/coogmusic.jpg": "/personal-website/static/media/coogmusic.34f3a1d6d9f8c398a5a9.jpg",
     "index.html": "/personal-website/index.html",
-    "main.2361c806.css.map": "/personal-website/static/css/main.2361c806.css.map",
+    "main.3fbd2f3b.css.map": "/personal-website/static/css/main.3fbd2f3b.css.map",
     "main.2adcddfb.js.map": "/personal-website/static/js/main.2adcddfb.js.map",
     "453.54aa27cc.chunk.js.map": "/personal-website/static/js/453.54aa27cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2361c806.css",
+    "static/css/main.3fbd2f3b.css",
     "static/js/main.2adcddfb.js"
   ]
 }
