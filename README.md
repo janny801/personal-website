@@ -23,34 +23,6 @@ npm run deploy
 - Make sure the `homepage` field in your `package.json` is correctly set:  
   - Example: `"homepage": "https://janny801.github.io/personal-website"`
 
-## 🖼️ Website Preview  
-
-<div align="center"><h3><u>📸 Project Showcase</u></h3></div>
-
-<p align="center">
-  <img src="imgs/projectspage.png" alt="Projects Page">
-</p>  
-
-- A slideshow containing images of some projects I’ve worked on.  
-- Includes what I learned, my experience building each project, and links to GitHub or the live website (if hosted).
-
-<div align="center"><h3><u>📸 About Me Section</u></h3></div>
-
-<p align="center">
-  <img src="imgs/aboutmepage.png" alt="About Me Page">
-</p>  
-
-- Tells a little bit about myself and includes photos.  
-- Includes a link to view my resume.
-
-<div align="center"><h3><u>📸 Contact Section</u></h3></div>
-
-<p align="center">
-  <img src="imgs/contactmepage.png" alt="Contact Me Page">
-</p>  
-
-- Offers multiple ways to get in touch with me — general location, email, phone numbers, LinkedIn, GitHub, and a form that sends an email directly to me via **EmailJS**.
-
 ## 🛠️ Technologies Used  
 
 - **Frontend:** React.js, JavaScript (ES6+), HTML5, CSS3  
